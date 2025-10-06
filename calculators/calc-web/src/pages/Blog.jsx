@@ -11,7 +11,7 @@ export default function Blog() {
 
         <div className="row mt-4">
           {/* Placeholder for WordPress blog posts */}
-          <div className="col-md-12">
+          {/* <div className="col-md-12">
             <div className="alert alert-info">
               <h5>🚀 WordPress Blog Integration Coming Soon!</h5>
               <p className="mb-0">
@@ -19,7 +19,7 @@ export default function Blog() {
                 You can integrate WordPress REST API or GraphQL here to fetch and display posts.
               </p>
             </div>
-          </div>
+          </div> */}
 
           {/* Example Blog Post Cards */}
           <div className="col-md-4 mb-4">
@@ -63,7 +63,7 @@ export default function Blog() {
         </div>
 
         {/* WordPress Integration Instructions */}
-        <div className="mt-5 p-4 bg-light rounded">
+        {/* <div className="mt-5 p-4 bg-light rounded">
           <h4>📝 WordPress Integration Guide</h4>
           <p>To integrate WordPress blog posts into this page:</p>
           <ol className="mb-0">
@@ -88,7 +88,7 @@ export default function Blog() {
               Implement pagination for better user experience with large numbers of posts.
             </li>
           </ol>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );

@@ -8,7 +8,7 @@ export default function Layout({ children, title }) {
       {/* Header with Navigation */}
       <header className="gradient-header">
         <div className="container-fluid">
-          <div className="row align-items-center py-3">
+          <div className="row align-items-center py-3 mx-4">
             <div className="col-md-6">
               <Link to="/" className="text-decoration-none text-white">
                 <h1 className="mb-0 h3">🧮 Calculator Hub</h1>
