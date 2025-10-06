@@ -1,6 +1,29 @@
 import Layout from '../components/Layout';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 export default function Blog() {
+  const fetchPosts = async () => {
+    const response = await axios.get('http://localhost/wp-blog/wp-json/wp/v2/posts');
+    return response.data;
+  };
+  const { data: posts } = useQuery({
+    queryKey: ['posts'],
+    queryFn: fetchPosts,
+  });
+
+
+  const formatDate = (date) => {
+    return new Date(date).toLocaleDateString('en-us' ,{
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })
+  }
+
+  console.log('posts', posts);
   return (
     <Layout title="Blog">
       <div className="calculator-container">
@@ -12,7 +35,7 @@ export default function Blog() {
         <div className="row mt-4">
           {/* Placeholder for WordPress blog posts */}
           {/* <div className="col-md-12">
-            <div className="alert alert-info">
+          <div className="alert alert-info">!
               <h5>🚀 WordPress Blog Integration Coming Soon!</h5>
               <p className="mb-0">
                 This section will display blog posts from your WordPress backend. 
@@ -22,73 +45,30 @@ export default function Blog() {
           </div> */}
 
           {/* Example Blog Post Cards */}
-          <div className="col-md-4 mb-4">
-            <div className="card h-100 shadow-sm">
-              <div className="card-body">
-                <h5 className="card-title">How to Calculate Your GPA</h5>
-                <p className="text-muted small mb-2">Posted on Jan 15, 2025</p>
-                <p className="card-text">
-                  Learn the basics of GPA calculation and how it impacts your academic standing...
-                </p>
-                <a href="#" className="btn btn-outline-primary btn-sm">Read More</a>
+          {posts?.map((post) => (
+            <div key={post.id} className="col-md-4 mb-4">
+              <div className="card h-100 shadow-sm">
+                <div className="card-body">
+                  <h5 className="card-title">{post.title.rendered}</h5>
+                  <p className="text-muted small mb-2">Posted on {formatDate(post.date)}</p>
+                  <p className="card-text">
+                    {post.excerpt.rendered.substring(0, 102) + "..."}
+                  </p>
+                  <Link 
+                    to={`/blog/${post.slug}`} 
+                    className="btn btn-outline-primary btn-sm"
+                  >
+                    Read More
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
+          ))}
 
-          <div className="col-md-4 mb-4">
-            <div className="card h-100 shadow-sm">
-              <div className="card-body">
-                <h5 className="card-title">Study Tips for Final Exams</h5>
-                <p className="text-muted small mb-2">Posted on Jan 10, 2025</p>
-                <p className="card-text">
-                  Prepare effectively for your finals with these proven study strategies...
-                </p>
-                <a href="#" className="btn btn-outline-primary btn-sm">Read More</a>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-md-4 mb-4">
-            <div className="card h-100 shadow-sm">
-              <div className="card-body">
-                <h5 className="card-title">Understanding Weighted Grades</h5>
-                <p className="text-muted small mb-2">Posted on Jan 5, 2025</p>
-                <p className="card-text">
-                  Discover how weighted grades work and calculate your course grade accurately...
-                </p>
-                <a href="#" className="btn btn-outline-primary btn-sm">Read More</a>
-              </div>
-            </div>
-          </div>
+          
         </div>
 
-        {/* WordPress Integration Instructions */}
-        {/* <div className="mt-5 p-4 bg-light rounded">
-          <h4>📝 WordPress Integration Guide</h4>
-          <p>To integrate WordPress blog posts into this page:</p>
-          <ol className="mb-0">
-            <li>
-              <strong>Set up WordPress REST API:</strong>
-              <br />
-              <code>const WP_API = 'https://your-wp-site.com/wp-json/wp/v2/posts'</code>
-            </li>
-            <li>
-              <strong>Fetch posts using React Query or useEffect:</strong>
-              <br />
-              <code>const &#123; data: posts &#125; = useQuery(['posts'], () =&gt; fetchPosts());</code>
-            </li>
-            <li>
-              <strong>Display posts dynamically:</strong>
-              <br />
-              Map through the posts array and render them in cards or list format.
-            </li>
-            <li>
-              <strong>Add pagination and filtering:</strong>
-              <br />
-              Implement pagination for better user experience with large numbers of posts.
-            </li>
-          </ol>
-        </div> */}
+        
       </div>
     </Layout>
   );
