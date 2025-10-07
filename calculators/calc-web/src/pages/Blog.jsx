@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 
 export default function Blog() {
   const fetchPosts = async () => {
-    const response = await axios.get('http://localhost/wp-blog/wp-json/wp/v2/posts');
+
+    const response = await axios.get('https://wp-calc-blog.page.gd/wp-json/wp/v2/posts');
     return response.data;
   };
   const { data: posts } = useQuery({
