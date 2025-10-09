@@ -1,11 +1,14 @@
 /* Modern Blue Theme Calculator Website */
 :root {
-  --primary-blue: #007BFF;
+  --primary-blue: #0080ff;
   --dark-blue: #0056D2;
-  --gradient-start: #004AAD;
-  --gradient-end: #00C6FF;
+  --gradient-start: #0080ff;
+  --gradient-end: #00bfff;
   --light-bg: #F8F9FA;
   --border-color: #E9ECEF;
+  --dark-bg: #0a0a0a;
+  --card-bg: #1a1a1a;
+  --header-footer-bg: #1a1a1a;
 }
 
 * {
@@ -24,13 +27,52 @@ body {
   flex-direction: column;
 }
 
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+}
+
+h1, h2 {
+  background: var(--card-bg);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-image: 
+    linear-gradient(var(--card-bg), var(--card-bg)),
+    linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 4px 15px rgba(0, 128, 255, 0.2);
+  margin-bottom: 1rem;
+}
+
+h3 {
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
 /* Gradient Header */
 .gradient-header {
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  background: var(--header-footer-bg);
   color: white;
   padding: 0.5rem 0;
   margin-bottom: 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  border-image-slice: 1;
+  box-shadow: 0 4px 20px rgba(0, 128, 255, 0.3);
+  position: relative;
+}
+
+.gradient-header::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
 }
 
 .gradient-header h1 {
@@ -45,29 +87,41 @@ body {
 .gradient-header .nav-link {
   color: rgba(255, 255, 255, 0.9) !important;
   font-weight: 500;
-  transition: all 0.2s;
+  transition: all 0.3s;
+  padding: 0.5rem 1rem !important;
+  border-radius: 8px;
 }
 
 .gradient-header .nav-link:hover,
 .gradient-header .nav-link.active {
   color: white !important;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  box-shadow: 0 0 15px rgba(0, 128, 255, 0.6);
 }
 
 .gradient-header .dropdown-menu {
-  background: white;
-  border: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: var(--header-footer-bg);
+  border: 2px solid var(--primary-blue);
+  box-shadow: 0 4px 20px rgba(0, 128, 255, 0.4);
 }
 
 .gradient-header .dropdown-item {
-  color: #333 !important;
+  color: white !important;
   font-weight: 500;
+  transition: all 0.2s;
 }
 
 .gradient-header .dropdown-item:hover {
-  background: var(--primary-blue);
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
   color: white !important;
+}
+
+.gradient-header .navbar-toggler {
+  border-color: var(--primary-blue);
+}
+
+.gradient-header .navbar-toggler-icon {
+  filter: brightness(0) invert(1);
 }
 
 /* Calculator Container */
@@ -81,27 +135,87 @@ body {
 
 /* Custom Buttons */
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
-  border: none;
+  background: var(--card-bg);
+  border: 2px solid transparent;
+  background-image: 
+    linear-gradient(var(--card-bg), var(--card-bg)),
+    linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
   padding: 0.75rem 1.5rem;
   font-weight: 500;
-  transition: transform 0.2s, box-shadow 0.2s;
+  color: white;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 128, 255, 0.3);
 }
 
 .btn-primary:hover {
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 6px 25px rgba(0, 128, 255, 0.6);
+  color: white;
 }
 
 .btn-outline-primary {
-  border-color: var(--primary-blue);
-  color: var(--primary-blue);
+  background: var(--card-bg);
+  border: 2px solid var(--primary-blue);
+  color: white;
   font-weight: 500;
+  transition: all 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 128, 255, 0.2);
 }
 
 .btn-outline-primary:hover {
-  background-color: var(--primary-blue);
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  border-color: var(--gradient-end);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 128, 255, 0.5);
+}
+
+.btn-secondary {
+  background: var(--card-bg);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  background: var(--card-bg);
   border-color: var(--primary-blue);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 128, 255, 0.4);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #ff3366, #cc0044);
+  border: none;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(255, 51, 102, 0.3);
+}
+
+.btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(255, 51, 102, 0.6);
+  filter: brightness(1.1);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #00ff88, #00cc66);
+  border: none;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+}
+
+.btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 255, 136, 0.6);
+  filter: brightness(1.1);
 }
 
 /* Input Styling */
@@ -178,22 +292,41 @@ body {
 
 /* Footer */
 footer {
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  background: var(--header-footer-bg);
   color: white;
   padding: 2rem 0;
   margin-top: auto;
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  border-image-slice: 1;
+  box-shadow: 0 -4px 20px rgba(0, 128, 255, 0.3);
+  position: relative;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
 }
 
 footer a {
   color: white;
   text-decoration: none;
   margin: 0 1rem;
-  transition: opacity 0.2s;
+  transition: all 0.3s;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: inline-block;
 }
 
 footer a:hover {
-  opacity: 0.8;
-  text-decoration: underline;
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  box-shadow: 0 0 15px rgba(0, 128, 255, 0.6);
+  text-decoration: none;
 }
 
 /* Table Styling */
@@ -203,11 +336,40 @@ footer a:hover {
 
 .table {
   background: white;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .table thead {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+  background: var(--card-bg);
   color: white;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+  border-image-slice: 1;
+  box-shadow: 0 2px 15px rgba(0, 128, 255, 0.3);
+}
+
+.table thead th {
+  background: var(--card-bg);
+  color: white;
+  font-weight: 600;
+  padding: 1rem;
+  border: none;
+  position: relative;
+}
+
+.table thead tr {
+  background: var(--card-bg);
+  border-bottom: 3px solid var(--primary-blue);
+}
+
+.table tbody tr {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table tbody td {
+  padding: 0.75rem 1rem;
 }
 
 /* Responsive Design */
@@ -226,6 +388,69 @@ footer a:hover {
   
   .result-value {
     font-size: 1.5rem;
+  }
+
+  /* Responsive Table for Mobile */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table {
+    min-width: 600px;
+    font-size: 0.875rem;
+  }
+
+  .table thead th {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .table tbody td {
+    padding: 0.5rem;
+  }
+
+  .table input.form-control,
+  .table select.form-select {
+    font-size: 0.875rem;
+    padding: 0.375rem 0.5rem;
+  }
+
+  .table .btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  /* Stack buttons on mobile */
+  .d-flex.gap-2 {
+    flex-direction: column;
+    gap: 0.5rem !important;
+  }
+
+  .d-flex.gap-2 .btn {
+    width: 100%;
+  }
+
+  /* Adjust headings on mobile */
+  h1, h2 {
+    font-size: 1.5rem;
+    padding: 0.75rem 1rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Tablet responsiveness */
+@media (max-width: 992px) and (min-width: 769px) {
+  .table {
+    font-size: 0.9rem;
+  }
+
+  .table thead th,
+  .table tbody td {
+    padding: 0.75rem;
   }
 }
 

@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-
+import logo from '/5.png';
 export default function Layout({ children, title }) {
   const location = useLocation();
 
@@ -11,8 +11,9 @@ export default function Layout({ children, title }) {
           <div className="row align-items-center py-3 mx-4">
             <div className="col-md-6">
               <Link to="/" className="text-decoration-none text-white">
-                <h1 className="mb-0 h3">🧮 Calculator Hub</h1>
-                <p className="mb-0 small">Free Online Calculators for Students</p>
+                <img src={logo} alt="Logo" className=" w-25 img-fluid" />
+                {/* <h1 className="mb-0 h3">🧮 Calculator Hub</h1> */}
+                {/* <p className="mb-0 small">Free Online Calculators for Students</p> */}
               </Link>
             </div>
             <div className="col-md-6">
@@ -71,12 +72,12 @@ export default function Layout({ children, title }) {
       {/* Top Ad */}
       <div className="container-fluid mt-3">
         <div id="ad-top" className="ad-placeholder">
-          <small>Advertisement Space</small>
+          <small>Ad</small>
         </div>
       </div>
 
       {/* Main Content - Full Width */}
-      <div className="container-fluid">
+      <div className="container-fluid " >
         <div className="row">
           {/* Left Sidebar Ad - Smaller */}
           <div className="col-xl-2 d-none d-xl-block">
