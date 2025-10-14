@@ -20,10 +20,10 @@ function App() {
     <Router>
       <Routes>
         {/* Calculator Routes */}
-        <Route path="/" element={<GradeCalculator />} />
-        <Route path="/percentage" element={<PercentageCalculator />} />
-        <Route path="/final-grade" element={<FinalGradeCalculator />} />
-        <Route path="/gpa" element={<GPACalculator />} />
+        <Route path="/" element={<FinalGradeCalculator />} />
+        <Route path="/gradeCalculator" element={<GradeCalculator />} />
+        <Route path="/percentageCalculator" element={<PercentageCalculator />} />
+        <Route path="/gpaCalculator" element={<GPACalculator />} />
         
         {/* Blog Routes */}
         <Route path="/blog" element={<Blog />} />

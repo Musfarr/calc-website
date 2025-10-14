@@ -193,12 +193,43 @@ export default function PercentageCalculator() {
 
         {/* Information Section */}
         <div className="p-3 bg-light rounded">
-          <h5>Common Uses:</h5>
-          <ul className="mb-0">
-            <li><strong>What is X% of Y:</strong> Calculate discounts, tips, sales tax</li>
-            <li><strong>X is what percent of Y:</strong> Find what percentage one number is of another</li>
-            <li><strong>Percent Change:</strong> Calculate growth rates, price changes, statistical differences</li>
-          </ul>
+          <p className="mb-3">
+            This online percentage calculator is designed to quickly and accurately determine percentages for any value or comparison. 
+            It simplifies everyday calculations, assisting students, professionals, and anyone who needs quick percentage results to manage their tasks with ease.
+          </p>
+          
+          <h5>How to Use a Percentage Calculator?</h5>
+          <p>Here's a step-by-step guide on how to use a Percentage Calculator:</p>
+          
+          <h6 className="mt-3"><strong>To Calculate the Percentage of a Value</strong></h6>
+          <p>
+            Enter the percentage in the "Percent (%)" field and the number you want to calculate it from in the "Of Number" field. 
+            Then click "Calculate" to see the result.
+          </p>
+          <p><strong>For example:</strong></p>
+          <p>What is 20% of $60?</p>
+          <p>20% is 20/100 multiplied by $60:</p>
+          <p><strong>20% × $60 = 20/100 × $60 = 0.2 × $60 = $12</strong></p>
+          
+          <h6 className="mt-3"><strong>To Calculate What Percentage One Number is Of Another</strong></h6>
+          <p>
+            Enter the first number in the "Number (X)" field and the second number in the "Of Number (Y)" field. 
+            Then click "Calculate" to find out what percentage the first number is of the second.
+          </p>
+          <p><strong>For Example:</strong></p>
+          <p>$12 is what percent of $60?</p>
+          <p>$12 is divided by $60 and multiplied by 100%:</p>
+          <p><strong>($12 / $60) × 100% = 20%</strong></p>
+          
+          <h6 className="mt-3"><strong>To Calculate the Percentage Change</strong></h6>
+          <p>
+            Enter the original value in the "Original Value" field and the new value in the "New Value" field. 
+            Then click "Calculate" to find the percentage change between the two values.
+          </p>
+          <p><strong>For Example:</strong></p>
+          <p>What is the percentage change from $40 to $50?</p>
+          <p>The difference between $50 and $40 is divided by $40 and multiplied by 100%:</p>
+          <p><strong>(($50 - $40) / $40) × 100% = 0.25 × 100% = 25%</strong></p>
         </div>
       </div>
 

@@ -47,10 +47,10 @@ export default function Layout({ children, title }) {
                         Calculators
                       </a>
                       <ul className="dropdown-menu">
-                        <li><Link className="dropdown-item" to="/">Grade Calculator</Link></li>
-                        <li><Link className="dropdown-item" to="/percentage">Percentage Calculator</Link></li>
-                        <li><Link className="dropdown-item" to="/final-grade">Final Grade Calculator</Link></li>
-                        <li><Link className="dropdown-item" to="/gpa">GPA Calculator</Link></li>
+                        <li><Link className="dropdown-item" to="/">Final Grade Calculator</Link></li>
+                        <li><Link className="dropdown-item" to="/gradeCalculator">Grade Calculator</Link></li>
+                        <li><Link className="dropdown-item" to="/percentageCalculator">Percentage Calculator</Link></li>
+                        <li><Link className="dropdown-item" to="/gpaCalculator">GPA Calculator</Link></li>
                       </ul>
                     </li>
                     <li className="nav-item">
@@ -71,8 +71,8 @@ export default function Layout({ children, title }) {
 
       {/* Top Ad */}
       <div className="container-fluid mt-3">
-        <div id="ad-top" className="ad-placeholder">
-          <small>Ad</small>
+        <div id="ad-top" className="ad-laceholder">
+          {/* <small>Ad</small> */}
         </div>
       </div>
 
@@ -81,8 +81,8 @@ export default function Layout({ children, title }) {
         <div className="row">
           {/* Left Sidebar Ad - Smaller */}
           <div className="col-xl-2 d-none d-xl-block">
-            <div id="ad-left" className="ad-placeholder sticky-top" style={{ top: '20px' }}>
-              <small>Ad</small>
+            <div id="ad-left" className="ad-laceholder sticky-top" style={{ top: '20px' }}>
+              {/* <small>Ad</small> */}
             </div>
           </div>
 
@@ -95,8 +95,8 @@ export default function Layout({ children, title }) {
 
           {/* Right Sidebar Ad - Smaller */}
           <div className="col-xl-2 d-none d-xl-block">
-            <div id="ad-right" className="ad-placeholder sticky-top" style={{ top: '20px' }}>
-              <small>Ad</small>
+            <div id="ad-right" className="ad-laceholder sticky-top" style={{ top: '20px' }}>
+              {/* <small>Ad</small> */}
             </div>
           </div>
         </div>

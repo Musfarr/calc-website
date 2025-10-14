@@ -168,13 +168,57 @@ export default function GradeCalculator() {
 
         {/* How to Use */}
         <div className="mt-4 p-3 bg-light rounded">
-          <h5>How to Use:</h5>
-          <ol className="mb-0">
-            <li>Enter each assignment/test grade (as a percentage)</li>
-            <li>Enter the weight of each assignment (as a percentage)</li>
-            <li>Add more rows if needed</li>
-            <li>Click "Calculate Grade" to see your weighted final grade</li>
-          </ol>
+          <p className="mb-3">
+            This online grade calculator is built to quickly, accurately, and easily compute academic grades based on entered scores and weighted averages. 
+            It simplifies calculating current grades, enabling students and educators to manage their academic progress with ease and precision.
+          </p>
+          
+          <h5>How to Use a Grade Calculator?</h5>
+          <p>Here's a step-by-step guide on how to use a Grade Calculator:</p>
+          
+          <h6 className="mt-3"><strong>Step 1: Input the Assignments</strong></h6>
+          <p>Users manually enter the name of each assignment, such as: Assignment 1, 2, 3, Homework, Final Exam, etc.</p>
+          
+          <h6><strong>Step 2: Input the Grade</strong></h6>
+          <p>Enter your scores for each assignment, test, project, or other exam throughout the course. Each entry generally includes the earned grade percentage (like 10%, 30%, 50%).</p>
+          
+          <h6><strong>Step 3: Input the Weight</strong></h6>
+          <p>Enter the assignment's weight into the course grade, indicating how different assignments impact the final grade, with a final exam potentially carrying more weight than small tasks.</p>
+          
+          <h6><strong>Step 4: Calculate the Grade Automatically</strong></h6>
+          <p>The tool automatically calculates the final grade based on entered grades and weights. Users can view their final score and see how each assignment impacts the overall mark.</p>
+          
+          <h6><strong>Step 5: Adjust as Needed</strong></h6>
+          <p>Users can add multiple grades and weights to view the cumulative final grade score for their course performance. This dynamic feature enables real-time exploration of various scenarios, helping users make informed decisions about their academic strategy and goal achievement.</p>
+          
+          <h5 className="mt-4">Weighted Grade Calculation</h5>
+          <p>The weighted grade is equal to <strong>(Sum of (Grade × Weight)) / (Sum of Weights)</strong>.</p>
+          <p>To use it: multiply each assignment's grade by its weight (as a decimal), sum these values, and then divide by the total of all the weights.</p>
+          
+          <h6 className="mt-3"><strong>For Example:</strong></h6>
+          <ul>
+            <li>Math course with a grade of 80 and a weight of 30%.</li>
+            <li>Biology course with a grade of 90 and a weight of 50%.</li>
+            <li>History course with a grade of 72 and a weight of 20%.</li>
+          </ul>
+          
+          <p>The weighted average grade is calculated by:</p>
+          <p><strong>Weighted grade = w₁×g₁ + w₂×g₂ + w₃×g₃</strong></p>
+          <p>= 30%×80 + 50%×90 + 20%×72 = <strong>83.4</strong></p>
+          
+          <p className="mt-3">When the weights are not in percent (hours or points...), you should also divide by the sum of the weights:</p>
+          <p><strong>Weighted grade = (w₁×g₁ + w₂×g₂ + w₃×g₃ + ...) / (w₁ + w₂ + w₃ + ...)</strong></p>
+          
+          <h6 className="mt-3"><strong>Example:</strong></h6>
+          <ul>
+            <li>Completed a 3-point Math course with a grade of 80.</li>
+            <li>Completed a 5-point Biology course with a grade of 90.</li>
+            <li>Completed a 2-point History course with a grade of 72.</li>
+          </ul>
+          
+          <p>The weighted average grade is calculated by:</p>
+          <p><strong>Weighted grade = (w₁×g₁ + w₂×g₂ + w₃×g₃) / (w₁ + w₂ + w₃)</strong></p>
+          <p>= (3×80 + 5×90 + 2×72) / (3 + 5 + 2) = <strong>83.4</strong></p>
         </div>
       </div>
 

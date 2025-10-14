@@ -4,10 +4,10 @@ export default function CalculatorNav() {
   const location = useLocation();
   
   const calculators = [
-    { path: '/', label: 'Grade Calculator' },
-    { path: '/percentage', label: 'Percentage Calculator' },
-    { path: '/final-grade', label: 'Final Grade Calculator' },
-    { path: '/gpa', label: 'GPA Calculator' }
+    { path: '/', label: 'Final Grade Calculator' },
+    { path: '/gradeCalculator', label: 'Grade Calculator' },
+    { path: '/percentageCalculator', label: 'Percentage Calculator' },
+    { path: '/gpaCalculator', label: 'GPA Calculator' }
   ];
 
   return (

@@ -203,22 +203,23 @@ export default function GPACalculator() {
           <div className="row">
             <div className="col-md-6">
               <ul className="mb-0">
-                <li><strong>A+/A:</strong> 4.0 - Excellent</li>
-                <li><strong>A-:</strong> 3.7</li>
-                <li><strong>B+:</strong> 3.3</li>
-                <li><strong>B:</strong> 3.0 - Good</li>
-                <li><strong>B-:</strong> 2.7</li>
-                <li><strong>C+:</strong> 2.3</li>
+                <li><strong>A+:</strong> 4.33 - Excellent</li>
+                <li><strong>A:</strong> 4.00</li>
+                <li><strong>A-:</strong> 3.67</li>
+                <li><strong>B+:</strong> 3.33</li>
+                <li><strong>B:</strong> 3.00 - Good</li>
+                <li><strong>B-:</strong> 2.67</li>
+                <li><strong>C+:</strong> 2.33</li>
               </ul>
             </div>
             <div className="col-md-6">
               <ul className="mb-0">
-                <li><strong>C:</strong> 2.0 - Average</li>
-                <li><strong>C-:</strong> 1.7</li>
-                <li><strong>D+:</strong> 1.3</li>
-                <li><strong>D:</strong> 1.0 - Poor</li>
-                <li><strong>D-:</strong> 0.7</li>
-                <li><strong>F:</strong> 0.0 - Fail</li>
+                <li><strong>C:</strong> 2.00 - Average</li>
+                <li><strong>C-:</strong> 1.67</li>
+                <li><strong>D+:</strong> 1.33</li>
+                <li><strong>D:</strong> 1.00 - Poor</li>
+                <li><strong>D-:</strong> 0.67</li>
+                <li><strong>F:</strong> 0 - Fail</li>
               </ul>
             </div>
           </div>
@@ -226,13 +227,28 @@ export default function GPACalculator() {
 
         {/* How to Use */}
         <div className="mt-3 p-3 bg-light rounded">
-          <h5>How to Use:</h5>
-          <ol className="mb-0">
-            <li>Enter the number of credit hours for each course</li>
-            <li>Select the letter grade you received</li>
-            <li>Add more courses as needed</li>
-            <li>Click "Calculate GPA" to see your Grade Point Average</li>
-          </ol>
+          <p className="mb-3">
+            This GPA calculator is designed to quickly and accurately compute your grade point average based on your course credit hours and letter grades. 
+            It simplifies academic tracking by helping students and educators calculate GPA with ease, supporting informed decisions about academic performance and goals.
+          </p>
+          
+          <h5>How to Use a GPA Calculator?</h5>
+          <p>Here's a step-by-step guide on how to use a GPA Calculator:</p>
+          <p>
+            Enter the course name in the "Course Name" field (optional), the number of credit hours in the "Credit Hours" field, 
+            and select your grade from the "Letter Grade" dropdown. Then click "Calculate GPA" to see your GPA result.
+          </p>
+          
+          <h6 className="mt-3"><strong>For example:</strong></h6>
+          <p>
+            The GPA is calculated as a weighted average of the grades, where the number of credit/hours is the weight and the numeric grade is taken from the GPA table.
+          </p>
+          
+          <p>The GPA is equal to the sum of the product of the credit hours weight (w) times the grade (g):</p>
+          <p><strong>GPA = w₁×g₁ + w₂×g₂ + w₃×g₃ + ... + wₙ×gₙ</strong></p>
+          
+          <p className="mt-3">The credit hours weight (wᵢ) is equal to the credit hours of the class divided by the sum of the credit hours of all the classes:</p>
+          <p><strong>wᵢ = cᵢ / (c₁ + c₂ + c₃ + ... + cₙ)</strong></p>
         </div>
       </div>
 

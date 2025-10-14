@@ -161,7 +161,7 @@ export default function FinalGradeCalculator() {
         )}
 
         {/* Example Section */}
-        <div className="mt-4 p-3 bg-light rounded">
+        {/* <div className="mt-4 p-3 bg-light rounded">
           <h5>Example:</h5>
           <p className="mb-2">
             If you have an <strong>85%</strong> in the class, want to achieve a <strong>90%</strong> final grade, 
@@ -173,10 +173,10 @@ export default function FinalGradeCalculator() {
             <li>Required from final: 90% - 59.5% = 30.5%</li>
             <li>Required final grade: 30.5% ÷ 30% = <strong>101.67%</strong> (Not achievable)</li>
           </ul>
-        </div>
+        </div> */}
 
         {/* How to Use */}
-        <div className="mt-3 p-3 bg-light rounded">
+        {/* <div className="mt-3 p-3 bg-light rounded">
           <h5>How to Use:</h5>
           <ol className="mb-0">
             <li>Enter your current grade in the class (before the final exam)</li>
@@ -184,6 +184,43 @@ export default function FinalGradeCalculator() {
             <li>Enter what percentage of your grade the final exam is worth</li>
             <li>Click "Calculate" to see what you need to score on the final</li>
           </ol>
+        </div> */}
+
+
+
+
+
+        <div className="mt-3 p-3 bg-light rounded">
+          <h5 className='mt-2 '>How to Use a Final Grade Calculator?</h5>
+
+          <div className="">
+          <ol className="mb-0">
+            <p><strong>Here’s a step-by-step guide on how to use a Final Grade Calculator:</strong></p>
+            <p>
+              Enter your current grade before the final exam in the "Current Grade (%)" field, the final grade you want to achieve in the "Desired Grade (%)" field, and how much the final exam is worth in the "Final Exam Weight (%)" field. Then click "Calculate Required Grade" to see the result.
+            </p>
+            <p><strong>For Example:</strong> </p>
+            <p>Current grade is 70% (or C-).</p>
+            <p>Final exam weight is 50%.</p>
+            <p>Required grade is 80% (or B-).</p>
+            <p>The final exam grade is equal to the required grade, minus 100% minus the final exam weight (wfinal) times the current grade (g), divided by the final exam weight (w):</p>
+            <p>Final exam grade = (80% - (100% - 50%) * 70%) / 50% = 86%</p>
+          <p> <strong>So Final exam grade =</strong></p>
+              <p>=
+                required grade - (100% - wfinal)×current grade
+                wfinal
+                =
+                80% - (100% - 50%)×70%
+                50%
+                = 90%
+              </p>
+              <p>So the final exam grade should be 90% (or A-).</p>
+          </ol>
+
+
+          </div>
+
+          
         </div>
       </div>
 
