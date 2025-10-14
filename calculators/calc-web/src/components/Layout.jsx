@@ -48,9 +48,9 @@ export default function Layout({ children, title }) {
                       </a>
                       <ul className="dropdown-menu">
                         <li><Link className="dropdown-item" to="/">Final Grade Calculator</Link></li>
-                        <li><Link className="dropdown-item" to="/gradeCalculator">Grade Calculator</Link></li>
-                        <li><Link className="dropdown-item" to="/percentageCalculator">Percentage Calculator</Link></li>
-                        <li><Link className="dropdown-item" to="/gpaCalculator">GPA Calculator</Link></li>
+                        <li><Link className="dropdown-item" to="/grade-calculator">Grade Calculator</Link></li>
+                        <li><Link className="dropdown-item" to="/percentage-calculator">Percentage Calculator</Link></li>
+                        <li><Link className="dropdown-item" to="/gpa-calculator">GPA Calculator</Link></li>
                       </ul>
                     </li>
                     <li className="nav-item">
