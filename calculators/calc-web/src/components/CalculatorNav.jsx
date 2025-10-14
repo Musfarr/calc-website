@@ -5,9 +5,9 @@ export default function CalculatorNav() {
   
   const calculators = [
     { path: '/', label: 'Final Grade Calculator' },
-    { path: '/gradeCalculator', label: 'Grade Calculator' },
-    { path: '/percentageCalculator', label: 'Percentage Calculator' },
-    { path: '/gpaCalculator', label: 'GPA Calculator' }
+    { path: '/grade-calculator', label: 'Grade Calculator' },
+    { path: '/percentage-calculator', label: 'Percentage Calculator' },
+    { path: '/gpa-calculator', label: 'GPA Calculator' }
   ];
 
   return (
