@@ -4,59 +4,59 @@ export default function Privacy() {
   return (
     <Layout title="Privacy Policy">
       <div className="calculator-container">
-        <h2 className="mb-4">Privacy Policy</h2>
-        <p className="text-muted">Last updated: {new Date().toLocaleDateString()}</p>
+        <h2 className="mb-4 text-white">Privacy Policy</h2>
+        <p className="text-muted">Last updated: October 15, 2025</p>
 
         <div className="mt-4">
-          <h4>1. Information We Collect</h4>
-          <p>
-            Calculator Hub is committed to protecting your privacy. We do not collect, store, 
-            or share any personal information. All calculations are performed locally in your 
-            browser, and no data is sent to our servers.
-          </p>
+          <p><strong>Privacy Policy for Final Grades Calculator</strong></p>
+          <p>Welcome to Final Grades Calculator (<a href="https://finalgradescalculator.com/" target="_blank" rel="noopener noreferrer">https://finalgradescalculator.com/</a>).</p>
+          <p>Your privacy is important to us. This page explains what information we collect, how we use it, and how we keep it safe.</p>
 
-          <h4 className="mt-4">2. Cookies and Tracking</h4>
-          <p>
-            We may use cookies and similar tracking technologies to improve user experience. 
-            These may include:
-          </p>
+          <h4 className="mt-4">1. Information We Collect</h4>
+          <p>We do not collect any personal information such as names, emails, or passwords.</p>
+          <p>Our website may automatically collect basic, non-personal information including:</p>
           <ul>
-            <li>Analytics cookies to understand how visitors use our site</li>
-            <li>Advertising cookies from third-party ad networks</li>
-            <li>Preference cookies to remember your settings</li>
+            <li>Your IP address</li>
+            <li>Browser type and version</li>
+            <li>Device information</li>
+            <li>Pages you visit on our site</li>
+            <li>Time spent and interactions on the site</li>
           </ul>
+          <p>This information is collected anonymously to improve our website’s performance and user experience.</p>
 
-          <h4 className="mt-4">3. Third-Party Services</h4>
+          <h4 className="mt-4">2. Cookies and Advertising</h4>
+          <p>Our website uses cookies to:</p>
+          <ul>
+            <li>Improve site functionality and remember user preferences</li>
+            <li>Measure site traffic and analytics (e.g., via Google Analytics)</li>
+            <li>Display Google AdSense ads</li>
+          </ul>
+          <p>Google AdSense may use cookies to show you personalized ads based on your browsing history.</p>
           <p>
-            Our website may display advertisements from third-party ad networks. These networks 
-            may use cookies and web beacons to collect information about your visits to this and 
-            other websites to provide advertisements about goods and services of interest to you.
+            You can learn more or opt out of personalized ads by visiting{' '}
+            <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">https://policies.google.com/technologies/ads</a>.
           </p>
 
-          <h4 className="mt-4">4. Data Security</h4>
+          <h4 className="mt-4">3. How We Use Information</h4>
+          <p>We use collected data only to:</p>
+          <ul>
+            <li>Improve our calculators and website features</li>
+            <li>Analyze traffic trends and visitor behavior</li>
+            <li>Display relevant ads through Google AdSense</li>
+          </ul>
+          <p>We do not sell, rent, or share any data with third parties beyond what is necessary for analytics or advertising.</p>
+
+          <h4 className="mt-4">4. Third-Party Services</h4>
+          <p>We may use third-party services like Google Analytics and Google AdSense. These services may collect anonymous data through cookies according to their own privacy policies.</p>
           <p>
-            Since we do not collect or store personal data, there is no risk of your calculation 
-            data being compromised. All calculations happen in your browser and are not transmitted 
-            to our servers.
+            You can read Google’s privacy policy here:{' '}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a>.
           </p>
 
-          <h4 className="mt-4">5. Children's Privacy</h4>
+          <h4 className="mt-4">5. Contact Us</h4>
           <p>
-            Our service is intended for students and general users. We do not knowingly collect 
-            personal information from children under 13. If you are a parent or guardian and believe 
-            your child has provided personal information, please contact us.
-          </p>
-
-          <h4 className="mt-4">6. Changes to This Policy</h4>
-          <p>
-            We may update this Privacy Policy from time to time. We will notify you of any changes 
-            by posting the new Privacy Policy on this page and updating the "Last updated" date.
-          </p>
-
-          <h4 className="mt-4">7. Contact Us</h4>
-          <p>
-            If you have any questions about this Privacy Policy, please contact us through our 
-            website.
+            If you have any questions about this Privacy Policy, please contact us at{' '}
+            <a href="mailto:support@finalgradescalculator.com">support@finalgradescalculator.com</a>.
           </p>
         </div>
       </div>
