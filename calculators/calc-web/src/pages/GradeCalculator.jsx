@@ -84,7 +84,7 @@ export default function GradeCalculator() {
     </Helmet>
     <Layout title="Grade Calculator">
       <div className="calculator-container">
-        <h2 className="mb-4 text-white">Calculate Your Weighted Grade</h2>
+        <h1 className="mb-4 text-white">Calculate Your Weighted Grade</h1>
         <p className="text-muted">
           Enter your assignment grades and their weights to calculate your final grade.
         </p>

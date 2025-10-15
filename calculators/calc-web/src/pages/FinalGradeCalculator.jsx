@@ -71,7 +71,7 @@ export default function FinalGradeCalculator() {
     </Helmet>
         <Layout title="Final Grade Calculator">
       <div className="calculator-container">
-        <h2 className="mb-4 text-white">Final Grade Calculator</h2>
+        <h1 className="mb-4 text-white">Final Grade Calculator</h1>
         <p className="text-muted">
           Calculate what grade you need on your final exam to achieve your desired course grade.
         </p>

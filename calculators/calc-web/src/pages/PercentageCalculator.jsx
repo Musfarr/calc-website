@@ -75,7 +75,7 @@ export default function PercentageCalculator() {
     </Helmet>
     <Layout title="Percentage Calculator">
       <div className="calculator-container">
-        <h2 className="mb-4 text-white">Percentage Calculator</h2>
+        <h1 className="mb-4 text-white">Percentage Calculator</h1>
         <p className="text-muted">
           Calculate percentages quickly with these three useful calculators.
         </p>

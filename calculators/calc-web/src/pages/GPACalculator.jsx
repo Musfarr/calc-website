@@ -96,7 +96,7 @@ export default function GPACalculator() {
     </Helmet>
     <Layout title="GPA Calculator">
       <div className="calculator-container">
-        <h2 className="mb-4 text-white">GPA Calculator</h2>
+        <h1 className="mb-4 text-white">GPA Calculator</h1>
         <p className="text-muted">
           Calculate your Grade Point Average (GPA) based on your courses, credit hours, and grades.
         </p>
