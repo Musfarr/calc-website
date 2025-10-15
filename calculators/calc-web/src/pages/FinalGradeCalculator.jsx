@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Layout from '../components/Layout';
 import CalculatorNav from '../components/CalculatorNav';
+import { Helmet } from 'react-helmet-async';
 
 export default function FinalGradeCalculator() {
   const [currentGrade, setCurrentGrade] = useState('');
@@ -61,9 +62,16 @@ export default function FinalGradeCalculator() {
   };
 
   return (
-    <Layout title="Final Grade Calculator">
+    <>
+    <Helmet>
+      <title>Final Grades Calculator | Plan Your Academic Grades Strategically</title>
+        <meta name="description" content="Curious about what grades you need to reach your goal? Use this easy-to-use Final Grade Calculator with clear instructions and plan your success today!" />
+        <meta property="og:title" content="Final Grades Calculator | Plan Your Academic Grades Strategically" />
+        <link rel="canonical" href="https://www.finalgradescalculator.com" />
+    </Helmet>
+        <Layout title="Final Grade Calculator">
       <div className="calculator-container">
-        <h2 className="mb-4">Final Grade Calculator</h2>
+        <h2 className="mb-4 text-white">Final Grade Calculator</h2>
         <p className="text-muted">
           Calculate what grade you need on your final exam to achieve your desired course grade.
         </p>
@@ -226,5 +234,6 @@ export default function FinalGradeCalculator() {
 
       <CalculatorNav />
     </Layout>
+    </>
   );
 }

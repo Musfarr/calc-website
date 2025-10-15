@@ -11,11 +11,14 @@ import BlogPost from './pages/BlogPost';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { HelmetProvider } from 'react-helmet-async';
+
 
 function App() {
   const queryClient = new QueryClient();
 
   return (
+    <HelmetProvider>
     <QueryClientProvider client={queryClient}>
     <Router>
       <Routes>
@@ -35,6 +38,7 @@ function App() {
       </Routes>
     </Router>
     </QueryClientProvider>
+    </HelmetProvider>
   );
 }
 

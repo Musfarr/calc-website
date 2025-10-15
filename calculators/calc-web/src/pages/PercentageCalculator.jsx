@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Layout from '../components/Layout';
 import CalculatorNav from '../components/CalculatorNav';
+import { Helmet } from 'react-helmet-async';
 
 export default function PercentageCalculator() {
   // Type 1: What is X% of Y?
@@ -65,9 +66,16 @@ export default function PercentageCalculator() {
   };
 
   return (
+    <>
+    <Helmet>
+      <title>Online Percentage Calculator - Put the Value, Get the Answer</title>
+        <meta name="description" content="With this percentage calculator, you can easily calculate the percentage of a value, what percent one is of another, & the percentage difference. Click Now!" />
+        <meta property="og:title" content="Online Percentage Calculator - Put the Value, Get the Answer" />
+        <link rel="canonical" href="https://www.finalgradescalculator.com/percentage-calculator" />
+    </Helmet>
     <Layout title="Percentage Calculator">
       <div className="calculator-container">
-        <h2 className="mb-4">Percentage Calculator</h2>
+        <h2 className="mb-4 text-white">Percentage Calculator</h2>
         <p className="text-muted">
           Calculate percentages quickly with these three useful calculators.
         </p>
@@ -235,5 +243,6 @@ export default function PercentageCalculator() {
 
       <CalculatorNav />
     </Layout>
+    </>
   );
 }

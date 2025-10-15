@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Layout from '../components/Layout';
 import CalculatorNav from '../components/CalculatorNav';
+import { Helmet } from 'react-helmet-async';
 
 export default function GPACalculator() {
   const [courses, setCourses] = useState([
@@ -86,9 +87,16 @@ export default function GPACalculator() {
   };
 
   return (
+    <>
+    <Helmet>
+      <title>GPA Calculator | Easily Calculate Your GPA</title>
+        <meta name="description" content=" Now easily track and calculate your GPA with the GPA Calculator. Save time & avoid errors by simply entering the value and getting the answer." />
+        <meta property="og:title" content="GPA Calculator | Easily Calculate Your GPA" />
+        <link rel="canonical" href="https://www.finalgradescalculator.com/gpa-calculator" />
+    </Helmet>
     <Layout title="GPA Calculator">
       <div className="calculator-container">
-        <h2 className="mb-4">GPA Calculator</h2>
+        <h2 className="mb-4 text-white">GPA Calculator</h2>
         <p className="text-muted">
           Calculate your Grade Point Average (GPA) based on your courses, credit hours, and grades.
         </p>
@@ -254,5 +262,6 @@ export default function GPACalculator() {
 
       <CalculatorNav />
     </Layout>
+    </>
   );
 }

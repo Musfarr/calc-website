@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Layout from '../components/Layout';
 import CalculatorNav from '../components/CalculatorNav';
+import { Helmet } from 'react-helmet-async';
 
 export default function GradeCalculator() {
   const [assignments, setAssignments] = useState([
@@ -74,9 +75,16 @@ export default function GradeCalculator() {
   };
 
   return (
+    <>
+    <Helmet>
+      <title>Grade Calculator | Track Your Academic Progress</title>
+        <meta name="description" content="This grade calculator makes the calculation very easy. Enter your values and get instant results. Follow our simple guide to calculate your grades easily." />
+        <meta property="og:title" content="Grade Calculator | Track Your Academic Progress" />
+        <link rel="canonical" href="https://www.finalgradescalculator.com/grade-calculator" />
+    </Helmet>
     <Layout title="Grade Calculator">
       <div className="calculator-container">
-        <h2 className="mb-4">Calculate Your Weighted Grade</h2>
+        <h2 className="mb-4 text-white">Calculate Your Weighted Grade</h2>
         <p className="text-muted">
           Enter your assignment grades and their weights to calculate your final grade.
         </p>
@@ -225,5 +233,6 @@ export default function GradeCalculator() {
       {/* Navigation to Other Calculators */}
       <CalculatorNav />
     </Layout>
+    </>
   );
 }
