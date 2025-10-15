@@ -107,7 +107,7 @@ export default function Layout({ children, title }) {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-6 text-center text-md-start">
-              <p className="mb-2">&copy; 2025 Calculator Hub. All rights reserved.</p>
+              <p className="mb-2">&copy; 2025 Final Grades Calculator. All rights reserved.</p>
             </div>
             <div className="col-md-6 text-center text-md-end">
               <Link to="/">Home</Link>
