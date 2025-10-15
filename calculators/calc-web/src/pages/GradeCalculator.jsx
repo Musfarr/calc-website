@@ -181,8 +181,8 @@ export default function GradeCalculator() {
             It simplifies calculating current grades, enabling students and educators to manage their academic progress with ease and precision.
           </p>
           
-          <h5>How to Use a Grade Calculator?</h5>
-          <p>Here's a step-by-step guide on how to use a Grade Calculator:</p>
+          <h2 className='fw-bold'>How to Use a Grade Calculator?</h2>
+          <p> <strong>Here's a step-by-step guide on how to use a Grade Calculator:</strong></p>
           
           <h6 className="mt-3"><strong>Step 1: Input the Assignments</strong></h6>
           <p>Users manually enter the name of each assignment, such as: Assignment 1, 2, 3, Homework, Final Exam, etc.</p>

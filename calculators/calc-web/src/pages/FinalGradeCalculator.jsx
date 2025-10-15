@@ -199,7 +199,7 @@ export default function FinalGradeCalculator() {
 
 
         <div className="mt-3 p-3 bg-light rounded">
-          <h5 className='mt-2 '>How to Use a Final Grade Calculator?</h5>
+          <h2 className='mt-2 fw-bold'>How to Use a Final Grade Calculator?</h2>
 
           <div className="">
           <ol className="mb-0">

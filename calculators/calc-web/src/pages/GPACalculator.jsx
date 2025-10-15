@@ -240,8 +240,8 @@ export default function GPACalculator() {
             It simplifies academic tracking by helping students and educators calculate GPA with ease, supporting informed decisions about academic performance and goals.
           </p>
           
-          <h5>How to Use a GPA Calculator?</h5>
-          <p>Here's a step-by-step guide on how to use a GPA Calculator:</p>
+          <h2 className='fw-bold' >How to Use a GPA Calculator?</h2>
+          <p> <strong>  Here's a step-by-step guide on how to use a GPA Calculator: </strong></p>
           <p>
             Enter the course name in the "Course Name" field (optional), the number of credit hours in the "Credit Hours" field, 
             and select your grade from the "Letter Grade" dropdown. Then click "Calculate GPA" to see your GPA result.

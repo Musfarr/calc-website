@@ -10,7 +10,7 @@ export default function Blog() {
     const response = await axios.get('https://wp-calc-blog.page.gd/wp-json/wp/v2/posts');
     return response.data;
   };
-  const { data: posts } = useQuery({
+  const { data: posts, isLoading } = useQuery({
     queryKey: ['posts'],
     queryFn: fetchPosts,
   });
@@ -45,8 +45,16 @@ export default function Blog() {
             </div>
           </div> */}
 
+          {isLoading && (
+            <div className="col-12 d-flex justify-content-center my-4">
+              <div className="spinner-border text-primary" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          )}
+
           {/* Example Blog Post Cards */}
-          {posts?.map((post) => (
+          {!isLoading && posts?.map((post) => (
             <div key={post.id} className="col-md-4 mb-4">
               <div className="card h-100 shadow-sm">
                 <div className="card-body">
