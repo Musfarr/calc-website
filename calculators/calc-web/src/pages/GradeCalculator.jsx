@@ -78,9 +78,36 @@ export default function GradeCalculator() {
     <>
     <Helmet>
       <title>Grade Calculator | Track Your Academic Progress</title>
-        <meta name="description" content="This grade calculator makes the calculation very easy. Enter your values and get instant results. Follow our simple guide to calculate your grades easily." />
-        <meta property="og:title" content="Grade Calculator | Track Your Academic Progress" />
-        <link rel="canonical" href="https://www.finalgradescalculator.com/grade-calculator" />
+      <meta name="description" content="This grade calculator makes the calculation very easy. Enter your values and get instant results. Follow our simple guide to calculate your grades easily." />
+      <meta name="keywords" content="grade calculator, weighted grade calculator, academic progress tracker" />
+      <meta name="author" content="Final Grades Calculator" />
+      <meta name="robots" content="index, follow" />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://www.finalgradescalculator.com/grade-calculator" />
+      <meta property="og:title" content="Grade Calculator | Track Your Academic Progress" />
+      <meta property="og:description" content="This grade calculator makes the calculation very easy. Enter your values and get instant results. Follow our simple guide to calculate your grades easily." />
+      <meta property="og:image" content="https://www.finalgradescalculator.com/images/og-default.png" />
+      <meta property="og:site_name" content="Final Grades Calculator" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content="https://www.finalgradescalculator.com/grade-calculator" />
+      <meta name="twitter:title" content="Grade Calculator | Track Your Academic Progress" />
+      <meta name="twitter:description" content="This grade calculator makes the calculation very easy. Enter your values and get instant results. Follow our simple guide to calculate your grades easily." />
+      <meta name="twitter:image" content="https://www.finalgradescalculator.com/images/og-default.png" />
+
+      <link rel="canonical" href="https://www.finalgradescalculator.com/grade-calculator" />
+      <link rel="alternate" hreflang="en" href="https://www.finalgradescalculator.com/grade-calculator" />
+
+      <link rel="icon" href="/6.png" type="image/png" />
+      <link rel="apple-touch-icon" href="/6.png" />
+
+      <meta name="language" content="en" />
+      <meta name="geo.region" content="US" />
+      <meta name="theme-color" content="#ffffff" />
+      <meta name="apple-mobile-web-app-title" content="Final Grades Calculator" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      <meta name="format-detection" content="telephone=no" />
     </Helmet>
     <Layout title="Grade Calculator">
       <div className="calculator-container">

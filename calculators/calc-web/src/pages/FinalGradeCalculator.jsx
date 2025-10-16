@@ -65,9 +65,36 @@ export default function FinalGradeCalculator() {
     <>
     <Helmet>
       <title>Final Grades Calculator | Plan Your Academic Grades Strategically</title>
-        <meta name="description" content="Curious about what grades you need to reach your goal? Use this easy-to-use Final Grade Calculator with clear instructions and plan your success today!" />
-        <meta property="og:title" content="Final Grades Calculator | Plan Your Academic Grades Strategically" />
-        <link rel="canonical" href="https://www.finalgradescalculator.com" />
+      <meta name="description" content="Curious about what grades you need to reach your goal? Use this easy-to-use Final Grade Calculator with clear instructions and plan your success today!" />
+      <meta name="keywords" content="final grade calculator, required final exam score, academic planning, grade planner" />
+      <meta name="author" content="Final Grades Calculator" />
+      <meta name="robots" content="index, follow" />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://www.finalgradescalculator.com/" />
+      <meta property="og:title" content="Final Grades Calculator | Plan Your Academic Grades Strategically" />
+      <meta property="og:description" content="Curious about what grades you need to reach your goal? Use this easy-to-use Final Grade Calculator with clear instructions and plan your success today!" />
+      <meta property="og:image" content="https://www.finalgradescalculator.com/images/og-default.png" />
+      <meta property="og:site_name" content="Final Grades Calculator" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content="https://www.finalgradescalculator.com/" />
+      <meta name="twitter:title" content="Final Grades Calculator | Plan Your Academic Grades Strategically" />
+      <meta name="twitter:description" content="Curious about what grades you need to reach your goal? Use this easy-to-use Final Grade Calculator with clear instructions and plan your success today!" />
+      <meta name="twitter:image" content="https://www.finalgradescalculator.com/images/og-default.png" />
+
+      <link rel="canonical" href="https://www.finalgradescalculator.com/" />
+      <link rel="alternate" hreflang="en" href="https://www.finalgradescalculator.com/" />
+
+      <link rel="icon" href="/6.png" type="image/png" />
+      <link rel="apple-touch-icon" href="/6.png" />
+
+      <meta name="language" content="en" />
+      <meta name="geo.region" content="PK" />
+      <meta name="theme-color" content="#ffffff" />
+      <meta name="apple-mobile-web-app-title" content="Final Grades Calculator" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      <meta name="format-detection" content="telephone=no" />
     </Helmet>
         <Layout title="Final Grade Calculator">
       <div className="calculator-container">

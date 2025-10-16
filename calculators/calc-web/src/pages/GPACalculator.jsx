@@ -90,9 +90,36 @@ export default function GPACalculator() {
     <>
     <Helmet>
       <title>GPA Calculator | Easily Calculate Your GPA</title>
-        <meta name="description" content=" Now easily track and calculate your GPA with the GPA Calculator. Save time & avoid errors by simply entering the value and getting the answer." />
-        <meta property="og:title" content="GPA Calculator | Easily Calculate Your GPA" />
-        <link rel="canonical" href="https://www.finalgradescalculator.com/gpa-calculator" />
+      <meta name="description" content="Now easily track and calculate your GPA with the GPA Calculator. Save time & avoid errors by simply entering the value and getting the answer." />
+      <meta name="keywords" content="gpa calculator, grade point average calculator, college gpa tool" />
+      <meta name="author" content="Final Grades Calculator" />
+      <meta name="robots" content="index, follow" />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://www.finalgradescalculator.com/gpa-calculator" />
+      <meta property="og:title" content="GPA Calculator | Easily Calculate Your GPA" />
+      <meta property="og:description" content="Now easily track and calculate your GPA with the GPA Calculator. Save time & avoid errors by simply entering the value and getting the answer." />
+      <meta property="og:image" content="https://www.finalgradescalculator.com/images/og-default.png" />
+      <meta property="og:site_name" content="Final Grades Calculator" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content="https://www.finalgradescalculator.com/gpa-calculator" />
+      <meta name="twitter:title" content="GPA Calculator | Easily Calculate Your GPA" />
+      <meta name="twitter:description" content="Now easily track and calculate your GPA with the GPA Calculator. Save time & avoid errors by simply entering the value and getting the answer." />
+      <meta name="twitter:image" content="https://www.finalgradescalculator.com/images/og-default.png" />
+
+      <link rel="canonical" href="https://www.finalgradescalculator.com/gpa-calculator" />
+      <link rel="alternate" hreflang="en" href="https://www.finalgradescalculator.com/gpa-calculator" />
+
+      <link rel="icon" href="/6.png" type="image/png" />
+      <link rel="apple-touch-icon" href="/6.png" />
+
+      <meta name="language" content="en" />
+      <meta name="geo.region" content="PK" />
+      <meta name="theme-color" content="#FFFFFF" />
+      <meta name="apple-mobile-web-app-title" content="Final Grades Calculator" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      <meta name="format-detection" content="telephone=no" />
     </Helmet>
     <Layout title="GPA Calculator">
       <div className="calculator-container">
