@@ -66,7 +66,7 @@ export default function FinalGradeCalculator() {
     <Helmet>
       <title>Final Grades Calculator | Plan Your Academic Grades Strategically</title>
       <meta name="description" content="Curious about what grades you need to reach your goal? Use this easy-to-use Final Grade Calculator with clear instructions and plan your success today!" />
-      <meta name="keywords" content="final grade calculator, required final exam score, academic planning, grade planner" />
+      {/* <meta name="keywords" content="final grade calculator, required final exam score, academic planning, grade planner" /> */}
       <meta name="author" content="Final Grades Calculator" />
       <meta name="robots" content="index, follow" />
 

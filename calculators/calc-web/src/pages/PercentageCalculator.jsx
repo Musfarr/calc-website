@@ -70,7 +70,7 @@ export default function PercentageCalculator() {
     <Helmet>
       <title>Online Percentage Calculator - Put the Value, Get the Answer</title>
       <meta name="description" content="With this percentage calculator, you can easily calculate the percentage of a value, what percent one is of another, & the percentage difference. Click Now!" />
-      <meta name="keywords" content="percentage calculator, percent change calculator, percent of number" />
+      {/* <meta name="keywords" content="percentage calculator, percent change calculator, percent of number" /> */}
       <meta name="author" content="Final Grades Calculator" />
       <meta name="robots" content="index, follow" />
 

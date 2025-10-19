@@ -91,7 +91,7 @@ export default function GPACalculator() {
     <Helmet>
       <title>GPA Calculator | Easily Calculate Your GPA</title>
       <meta name="description" content="Now easily track and calculate your GPA with the GPA Calculator. Save time & avoid errors by simply entering the value and getting the answer." />
-      <meta name="keywords" content="gpa calculator, grade point average calculator, college gpa tool" />
+      {/* <meta name="keywords" content="gpa calculator, grade point average calculator, college gpa tool" /> */}
       <meta name="author" content="Final Grades Calculator" />
       <meta name="robots" content="index, follow" />
 
