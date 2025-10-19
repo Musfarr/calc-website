@@ -9,15 +9,15 @@ export default function Layout({ children, title }) {
       <header className="gradient-header">
         <div className="container-fluid">
           <div className="row align-items-center py-3 mx-4">
-            <div className="col-md-6">
+            <div className="col-6 col-md-6">
               <Link to="/" className="text-decoration-none text-white">
-                <img src={logo} alt="Logo" className=" w-25 img-fluid" />
+                <img src={logo} alt="Logo" className="logo-img img-fluid" />
                 {/* <h1 className="mb-0 h3">🧮 Calculator Hub</h1> */}
                 {/* <p className="mb-0 small">Free Online Calculators for Students</p> */}
               </Link>
             </div>
-            <div className="col-md-6">
-              <nav className="navbar navbar-expand-lg navbar-dark">
+            <div className="col-6 col-md-6">
+              <nav className="navbar navbar-expand-lg navbar-dark p-0">
                 <button
                   className="navbar-toggler ms-auto"
                   type="button"

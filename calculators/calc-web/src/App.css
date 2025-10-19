@@ -84,6 +84,26 @@ h3 {
   color: white !important;
 }
 
+/* Logo Styling */
+.logo-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 60px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    max-height: 80px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo-img {
+    max-height: 70px;
+  }
+}
+
 .gradient-header .nav-link {
   color: rgba(255, 255, 255, 0.9) !important;
   font-weight: 500;
