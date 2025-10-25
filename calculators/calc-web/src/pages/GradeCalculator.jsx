@@ -108,6 +108,35 @@ export default function GradeCalculator() {
       <meta name="apple-mobile-web-app-title" content="Final Grades Calculator" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       <meta name="format-detection" content="telephone=no" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "Grade Calculator",
+            operatingSystem: "All",
+            applicationCategory: "CalculatorApplication",
+            description: "Easily calculate your overall grade using our free online Grade Calculator. Input your assignment scores and weights to find your current or final grade instantly.",
+            url: "https://www.finalgradescalculator.com/grade-calculator/",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD"
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "4.8",
+              ratingCount: "220"
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Final Grades Calculator",
+              url: "https://www.finalgradescalculator.com/"
+            }
+          })
+        }}
+      />
     </Helmet>
     <Layout title="Grade Calculator">
       <div className="calculator-container">

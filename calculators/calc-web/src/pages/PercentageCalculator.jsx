@@ -99,6 +99,35 @@ export default function PercentageCalculator() {
       <meta name="apple-mobile-web-app-title" content="Final Grades Calculator" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       <meta name="format-detection" content="telephone=no" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "Percentage Calculator",
+            operatingSystem: "All",
+            applicationCategory: "CalculatorApplication",
+            description: "Use our free Percentage Calculator to find what percentage one number is of another, or to calculate percentage changes easily and quickly.",
+            url: "https://www.finalgradescalculator.com/percentage-calculator/",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD"
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "4.7",
+              ratingCount: "180"
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Final Grades Calculator",
+              url: "https://www.finalgradescalculator.com/"
+            }
+          })
+        }}
+      />
     </Helmet>
     <Layout title="Percentage Calculator">
       <div className="calculator-container">
