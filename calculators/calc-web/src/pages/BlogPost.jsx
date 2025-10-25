@@ -52,7 +52,7 @@ export default function BlogPost() {
           <article>
             {/* Post Header */}
             <header className="mb-4">
-              <h1 className="mb-3">{post.title.rendered}</h1>
+              <h1 className="mb-3 text-white">{post.title.rendered}</h1>
               <p className="text-muted">
                 <small>Published on {formatDate(post.date)}</small>
               </p>
