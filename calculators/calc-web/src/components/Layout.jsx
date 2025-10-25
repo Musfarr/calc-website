@@ -48,14 +48,14 @@ export default function Layout({ children, title }) {
                       </a>
                       <ul className="dropdown-menu">
                         <li><Link className="dropdown-item" to="/">Final Grade Calculator</Link></li>
-                        <li><Link className="dropdown-item" to="/grade-calculator">Grade Calculator</Link></li>
-                        <li><Link className="dropdown-item" to="/percentage-calculator">Percentage Calculator</Link></li>
-                        <li><Link className="dropdown-item" to="/gpa-calculator">GPA Calculator</Link></li>
+                        <li><Link className="dropdown-item" to="/grade-calculator/">Grade Calculator</Link></li>
+                        <li><Link className="dropdown-item" to="/percentage-calculator/">Percentage Calculator</Link></li>
+                        <li><Link className="dropdown-item" to="/gpa-calculator/">GPA Calculator</Link></li>
                       </ul>
                     </li>
                     <li className="nav-item">
                       <Link 
-                        to="/blog" 
+                        to="/blog/" 
                         className={`nav-link ${location.pathname.startsWith('/blog') ? 'active fw-bold' : ''}`}
                       >
                         Blog
@@ -111,9 +111,9 @@ export default function Layout({ children, title }) {
             </div>
             <div className="col-md-6 text-center text-md-end">
               <Link to="/">Home</Link>
-              <Link to="/blog">Blog</Link>
-              <Link to="/privacy">Privacy Policy</Link>
-              <Link to="/terms">Terms & Conditions</Link>
+              <Link to="/blog/">Blog</Link>
+              <Link to="/privacy/">Privacy Policy</Link>
+              <Link to="/terms/">Terms & Conditions</Link>
             </div>
           </div>
         </div>

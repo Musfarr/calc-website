@@ -30,7 +30,7 @@ export default function BlogPost() {
     <Layout title={post?.title.rendered || 'Blog Post'}>
       <div className="calculator-container">
         {/* Back to Blog Link */}
-        <Link to="/blog" className="btn btn-outline-secondary mb-4">
+        <Link to="/blog/" className="btn btn-outline-secondary mb-4">
           ← Back to Blog
         </Link>
 
@@ -66,7 +66,7 @@ export default function BlogPost() {
 
             {/* Back to Blog Link (bottom) */}
             <div className="mt-5 pt-4 border-top">
-              <Link to="/blog" className="btn btn-outline-secondary">
+              <Link to="/blog/" className="btn btn-outline-secondary">
                 ← Back to Blog
               </Link>
             </div>
