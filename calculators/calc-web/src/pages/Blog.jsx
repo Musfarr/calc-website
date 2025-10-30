@@ -6,8 +6,7 @@ import { Link } from 'react-router-dom';
 
 export default function Blog() {
   const fetchPosts = async () => {
-
-    const response = await axios.get('https://wp-calc-blog.page.gd/wp-json/wp/v2/posts');
+    const response = await axios.get('https://wp-calc-blog.page.gd/wp-json/wp/v2/posts?_embed');
     return response.data;
   };
   const { data: posts, isLoading } = useQuery({
@@ -17,12 +16,26 @@ export default function Blog() {
 
 
   const formatDate = (date) => {
-    return new Date(date).toLocaleDateString('en-us' ,{
+    return new Date(date).toLocaleDateString('en-us', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
-    })
-  }
+    });
+  };
+
+  const getFeaturedImage = (post) => {
+    if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0]) {
+      return post._embedded['wp:featuredmedia'][0].source_url;
+    }
+    return 'https://via.placeholder.com/400x250/6c757d/ffffff?text=Blog+Post';
+  };
+
+  const getExcerpt = (excerpt) => {
+    const div = document.createElement('div');
+    div.innerHTML = excerpt;
+    const text = div.textContent || div.innerText || '';
+    return text.length > 120 ? text.substring(0, 120) + '...' : text;
+  };
 
   console.log('posts', posts);
   return (
@@ -53,21 +66,33 @@ export default function Blog() {
             </div>
           )}
 
-          {/* Example Blog Post Cards */}
+          {/* Blog Post Cards */}
           {!isLoading && posts?.map((post) => (
             <div key={post.id} className="col-md-4 mb-4">
-              <div className="card h-100 shadow-sm">
-                <div className="card-body">
+              <div className="card h-100 shadow-sm hover-shadow">
+                {/* Featured Image */}
+                <img 
+                  src={getFeaturedImage(post)} 
+                  className="card-img-top" 
+                  alt={post.title.rendered}
+                  style={{ height: '200px', objectFit: 'cover' }}
+                  onError={(e) => {
+                    e.target.src = 'https://via.placeholder.com/400x250/6c757d/ffffff?text=Blog+Post';
+                  }}
+                />
+                <div className="card-body d-flex flex-column">
                   <h5 className="card-title">{post.title.rendered}</h5>
-                  <p className="text-muted small mb-2">Posted on {formatDate(post.date)}</p>
-                  <p className="card-text">
-                    {post.excerpt.rendered.substring(0, 102) + "..."}
+                  <p className="text-muted small mb-2">
+                    <i className="bi bi-calendar3"></i> {formatDate(post.date)}
+                  </p>
+                  <p className="card-text flex-grow-1">
+                    {getExcerpt(post.excerpt.rendered)}
                   </p>
                   <Link 
-                    to={`/blog/${post.slug}`} 
-                    className="btn btn-outline-primary btn-sm"
+                    to={`/blog/${post.slug}/`} 
+                    className="btn btn-outline-primary btn-sm mt-auto"
                   >
-                    Read More
+                    Read More →
                   </Link>
                 </div>
               </div>

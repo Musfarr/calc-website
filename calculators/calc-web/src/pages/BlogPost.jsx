@@ -8,7 +8,7 @@ export default function BlogPost() {
 
   const fetchPost = async () => {
     const response = await axios.get(
-      `https://wp-calc-blog.page.gd/wp-json/wp/v2/posts?slug=${slug}`
+      `https://wp-calc-blog.page.gd/wp-json/wp/v2/posts?slug=${slug}/`
     );
     return response.data[0]; // WordPress returns an array, get first item
   };

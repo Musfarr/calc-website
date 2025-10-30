@@ -581,3 +581,27 @@ footer a:hover {
   background: none;
   padding: 0;
 }
+
+/* Blog Card Hover Effects */
+.hover-shadow {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.hover-shadow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 128, 255, 0.3) !important;
+  border-color: var(--primary-blue);
+}
+
+.card-img-top {
+  transition: transform 0.3s ease;
+}
+
+.hover-shadow:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.card {
+  overflow: hidden;
+}

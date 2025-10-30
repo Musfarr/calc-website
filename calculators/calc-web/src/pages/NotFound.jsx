@@ -16,15 +16,22 @@ export default function NotFound() {
           <p className="text-muted mt-3">
             The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
           </p>
-          <img
-            src="/404.jpg"
-            alt="404 Page Not Found"
-            className="img-fluid my-4"
-            style={{ maxWidth: '360px' }}
-          />
-          <div>
+          
+          <div className="d-flex flex-wrap justify-content-center gap-3">
             <Link to="/" className="btn btn-primary">
               Back to Home
+            </Link>
+            <Link to="/" className="btn btn-outline-primary">
+              Final Grade Calculator
+            </Link>
+            <Link to="/grade-calculator/" className="btn btn-outline-primary">
+              Grade Calculator
+            </Link>
+            <Link to="/percentage-calculator/" className="btn btn-outline-primary">
+              Percentage Calculator
+            </Link>
+            <Link to="/gpa-calculator/" className="btn btn-outline-primary">
+              GPA Calculator
             </Link>
           </div>
         </div>
