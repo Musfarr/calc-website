@@ -74,6 +74,31 @@ export default function GradeCalculator() {
     setResult(null);
   };
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Grade Calculator",
+    operatingSystem: "All",
+    applicationCategory: "CalculatorApplication",
+    description: "Easily calculate your overall grade using our free online Grade Calculator. Input your assignment scores and weights to find your current or final grade instantly.",
+    url: "https://www.finalgradescalculator.com/grade-calculator/",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD"
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      ratingCount: "220"
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Final Grades Calculator",
+      url: "https://www.finalgradescalculator.com/"
+    }
+  };
+
   return (
     <>
     <Helmet>
@@ -84,20 +109,20 @@ export default function GradeCalculator() {
       <meta name="robots" content="index, follow" />
 
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://www.finalgradescalculator.com/grade-calculator" />
+      <meta property="og:url" content="https://www.finalgradescalculator.com/grade-calculator/" />
       <meta property="og:title" content="Grade Calculator | Track Your Academic Progress" />
       <meta property="og:description" content="This grade calculator makes the calculation very easy. Enter your values and get instant results. Follow our simple guide to calculate your grades easily." />
       <meta property="og:image" content="https://www.finalgradescalculator.com/images/og-default.png" />
       <meta property="og:site_name" content="Final Grades Calculator" />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:url" content="https://www.finalgradescalculator.com/grade-calculator" />
+      <meta name="twitter:url" content="https://www.finalgradescalculator.com/grade-calculator/" />
       <meta name="twitter:title" content="Grade Calculator | Track Your Academic Progress" />
       <meta name="twitter:description" content="This grade calculator makes the calculation very easy. Enter your values and get instant results. Follow our simple guide to calculate your grades easily." />
       <meta name="twitter:image" content="https://www.finalgradescalculator.com/images/og-default.png" />
 
-      <link rel="canonical" href="https://www.finalgradescalculator.com/grade-calculator" />
-      <link rel="alternate" hreflang="en" href="https://www.finalgradescalculator.com/grade-calculator" />
+      <link rel="canonical" href="https://www.finalgradescalculator.com/grade-calculator/" />
+      <link rel="alternate" hreflang="en" href="https://www.finalgradescalculator.com/grade-calculator/" />
 
       <link rel="icon" href="/6.png" type="image/png" />
       <link rel="apple-touch-icon" href="/6.png" />
@@ -108,35 +133,9 @@ export default function GradeCalculator() {
       <meta name="apple-mobile-web-app-title" content="Final Grades Calculator" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       <meta name="format-detection" content="telephone=no" />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "Grade Calculator",
-            operatingSystem: "All",
-            applicationCategory: "CalculatorApplication",
-            description: "Easily calculate your overall grade using our free online Grade Calculator. Input your assignment scores and weights to find your current or final grade instantly.",
-            url: "https://www.finalgradescalculator.com/grade-calculator/",
-            offers: {
-              "@type": "Offer",
-              price: "0",
-              priceCurrency: "USD"
-            },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.8",
-              ratingCount: "220"
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "Final Grades Calculator",
-              url: "https://www.finalgradescalculator.com/"
-            }
-          })
-        }}
-      />
+      <script type="application/ld+json">
+        {JSON.stringify(schemaData)}
+      </script>
     </Helmet>
     <Layout title="Grade Calculator">
       <div className="calculator-container">

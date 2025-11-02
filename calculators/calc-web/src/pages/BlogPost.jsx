@@ -8,7 +8,7 @@ export default function BlogPost() {
 
   const fetchPost = async () => {
     const response = await axios.get(
-      `https://wp-calc-blog.page.gd/wp-json/wp/v2/posts?slug=${slug}/`
+      `https://wp-calc-blog.page.gd/wp-json/wp/v2/posts?slug=${slug}&_embed`
     );
     return response.data[0]; // WordPress returns an array, get first item
   };
@@ -24,6 +24,13 @@ export default function BlogPost() {
       month: 'long',
       day: 'numeric',
     });
+  };
+
+  const getFeaturedImage = (post) => {
+    if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0]) {
+      return post._embedded['wp:featuredmedia'][0].source_url;
+    }
+    return 'https://via.placeholder.com/800x400/6c757d/ffffff?text=Blog+Post';
   };
 
   return (
@@ -57,6 +64,17 @@ export default function BlogPost() {
                 <small>Published on {formatDate(post.date)}</small>
               </p>
             </header>
+
+            {/* Featured Image */}
+            <img
+              src={getFeaturedImage(post)}
+              alt={post.title.rendered}
+              className="img-fluid rounded mb-4"
+              style={{ maxHeight: '400px', objectFit: 'cover', width: '100%' }}
+              onError={(e) => {
+                e.target.src = 'https://via.placeholder.com/800x400/6c757d/ffffff?text=Blog+Post';
+              }}
+            />
 
             {/* Post Content */}
             <div

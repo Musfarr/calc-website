@@ -86,6 +86,31 @@ export default function GPACalculator() {
     setResult(null);
   };
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "GPA Calculator",
+    operatingSystem: "All",
+    applicationCategory: "CalculatorApplication",
+    description: "Use our free GPA Calculator to compute your Grade Point Average based on your grades and credit hours quickly and accurately.",
+    url: "https://www.finalgradescalculator.com/gpa-calculator/",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD"
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      ratingCount: "200"
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Final Grades Calculator",
+      url: "https://www.finalgradescalculator.com/"
+    }
+  };
+
   return (
     <>
     <Helmet>
@@ -120,35 +145,9 @@ export default function GPACalculator() {
       <meta name="apple-mobile-web-app-title" content="Final Grades Calculator" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       <meta name="format-detection" content="telephone=no" />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "GPA Calculator",
-            operatingSystem: "All",
-            applicationCategory: "CalculatorApplication",
-            description: "Use our free GPA Calculator to compute your Grade Point Average based on your grades and credit hours quickly and accurately.",
-            url: "https://www.finalgradescalculator.com/gpa-calculator/",
-            offers: {
-              "@type": "Offer",
-              price: "0",
-              priceCurrency: "USD"
-            },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.8",
-              ratingCount: "200"
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "Final Grades Calculator",
-              url: "https://www.finalgradescalculator.com/"
-            }
-          })
-        }}
-      />
+      <script type="application/ld+json">
+        {JSON.stringify(schemaData)}
+      </script>
     </Helmet>
     <Layout title="GPA Calculator">
       <div className="calculator-container">

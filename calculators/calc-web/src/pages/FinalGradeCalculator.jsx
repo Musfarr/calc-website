@@ -61,6 +61,31 @@ export default function FinalGradeCalculator() {
     setResult(null);
   };
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Final Grade Calculator",
+    operatingSystem: "All",
+    applicationCategory: "CalculatorApplication",
+    description: "Easily calculate your final grade percentage and plan your academic success with our free Final Grade Calculator tool.",
+    url: "https://www.finalgradescalculator.com/",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD"
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      ratingCount: "275"
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Final Grades Calculator",
+      url: "https://www.finalgradescalculator.com/"
+    }
+  };
+
   return (
     <>
     <Helmet>
@@ -95,35 +120,9 @@ export default function FinalGradeCalculator() {
       <meta name="apple-mobile-web-app-title" content="Final Grades Calculator" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       <meta name="format-detection" content="telephone=no" />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "Final Grade Calculator",
-            operatingSystem: "All",
-            applicationCategory: "CalculatorApplication",
-            description: "Easily calculate your final grade percentage and plan your academic success with our free Final Grade Calculator tool.",
-            url: "https://www.finalgradescalculator.com/",
-            offers: {
-              "@type": "Offer",
-              price: "0",
-              priceCurrency: "USD"
-            },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              ratingCount: "275"
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "Final Grades Calculator",
-              url: "https://www.finalgradescalculator.com/"
-            }
-          })
-        }}
-      />
+      <script type="application/ld+json">
+        {JSON.stringify(schemaData)}
+      </script>
     </Helmet>
         <Layout title="Final Grade Calculator">
       <div className="calculator-container">

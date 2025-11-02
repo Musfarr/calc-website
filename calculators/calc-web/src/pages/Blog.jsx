@@ -37,8 +37,7 @@ export default function Blog() {
     return text.length > 120 ? text.substring(0, 120) + '...' : text;
   };
 
-  console.log('posts', posts);
-  return (
+    return (
     <Layout title="Blog">
       <div className="calculator-container">
         <h2 className="mb-4">Blog</h2>
