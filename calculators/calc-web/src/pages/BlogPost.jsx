@@ -70,7 +70,7 @@ export default function BlogPost() {
               src={getFeaturedImage(post)}
               alt={post.title.rendered}
               className="img-fluid rounded mb-4"
-              style={{ maxHeight: '400px', objectFit: 'cover', width: '100%' }}
+              style={{ objectFit: 'cover', width: '100%' }}
               onError={(e) => {
                 e.target.src = 'https://via.placeholder.com/800x400/6c757d/ffffff?text=Blog+Post';
               }}

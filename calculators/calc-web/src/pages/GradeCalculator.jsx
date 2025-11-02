@@ -139,7 +139,7 @@ export default function GradeCalculator() {
     </Helmet>
     <Layout title="Grade Calculator">
       <div className="calculator-container">
-        <h1 className="mb-4 text-white">Calculate Your Weighted Grade</h1>
+        <h1 className="mb-4 text-white">Grade Calculator</h1>
         <p className="text-muted">
           Enter your assignment grades and their weights to calculate your final grade.
         </p>
@@ -239,22 +239,22 @@ export default function GradeCalculator() {
           <h2 className='fw-bold'>How to Use a Grade Calculator?</h2>
           <p> <strong>Here's a step-by-step guide on how to use a Grade Calculator:</strong></p>
           
-          <h6 className="mt-3"><strong>Step 1: Input the Assignments</strong></h6>
+          <h3 className="mt-3"><strong>Step 1: Input the Assignments</strong></h3>
           <p>Users manually enter the name of each assignment, such as: Assignment 1, 2, 3, Homework, Final Exam, etc.</p>
           
-          <h6><strong>Step 2: Input the Grade</strong></h6>
+          <h3><strong>Step 2: Input the Grade</strong></h3>
           <p>Enter your scores for each assignment, test, project, or other exam throughout the course. Each entry generally includes the earned grade percentage (like 10%, 30%, 50%).</p>
           
-          <h6><strong>Step 3: Input the Weight</strong></h6>
+          <h3 ><strong>Step 3: Input the Weight</strong></h3>
           <p>Enter the assignment's weight into the course grade, indicating how different assignments impact the final grade, with a final exam potentially carrying more weight than small tasks.</p>
           
-          <h6><strong>Step 4: Calculate the Grade Automatically</strong></h6>
+          <h3><strong>Step 4: Calculate the Grade Automatically</strong></h3>
           <p>The tool automatically calculates the final grade based on entered grades and weights. Users can view their final score and see how each assignment impacts the overall mark.</p>
           
-          <h6><strong>Step 5: Adjust as Needed</strong></h6>
+          <h3><strong>Step 5: Adjust as Needed</strong></h3>
           <p>Users can add multiple grades and weights to view the cumulative final grade score for their course performance. This dynamic feature enables real-time exploration of various scenarios, helping users make informed decisions about their academic strategy and goal achievement.</p>
           
-          <h5 className="mt-4">Weighted Grade Calculation</h5>
+          <h2 className="mt-4">Weighted Grade Calculation</h2>
           <p>The weighted grade is equal to <strong>(Sum of (Grade × Weight)) / (Sum of Weights)</strong>.</p>
           <p>To use it: multiply each assignment's grade by its weight (as a decimal), sum these values, and then divide by the total of all the weights.</p>
           
