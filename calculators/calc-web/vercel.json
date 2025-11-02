@@ -1,12 +1,11 @@
 {
-  "trailingSlash": true,
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ],
   "redirects": [
     {
-      "source": "/(.*[^/])",
-      "destination": "/$1/",
+      "source": "/:path((?!.*\\.).*[^/])",
+      "destination": "/:path/",
       "permanent": true
     }
   ]
