@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
@@ -130,6 +130,9 @@ function TocList({ items }) {
 
 export default function BlogPost() {
   const { slug } = useParams();
+  const [isTocOpen, setIsTocOpen] = useState(true);
+
+  const tocListId = useMemo(() => (slug ? `toc-list-${slug}` : 'post-toc-list'), [slug]);
 
   const fetchPost = async () => {
     const response = await axios.get(
@@ -225,8 +228,23 @@ export default function BlogPost() {
 
             {toc.length > 0 && (
               <nav className="post-toc mb-4 p-4 bg-light rounded">
-                <h2 className="h5 text-dark mb-3">Table of Contents</h2>
-                <TocList items={toc} />
+                <div className="d-flex justify-content-between align-items-start mb-3 gap-3">
+                  <h2 className="h5 text-dark mb-0">Table of Contents</h2>
+                  <button
+                    type="button"
+                    className="btn btn-sm btn-outline-primary toc-toggle"
+                    onClick={() => setIsTocOpen((prev) => !prev)}
+                    aria-expanded={isTocOpen}
+                    aria-controls={tocListId}
+                  >
+                    {isTocOpen ? 'Hide' : 'Show'}
+                  </button>
+                </div>
+                {isTocOpen && (
+                  <div id={tocListId}>
+                    <TocList items={toc} />
+                  </div>
+                )}
               </nav>
             )}
 
