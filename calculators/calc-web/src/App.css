@@ -599,6 +599,89 @@ footer a:hover {
   color: var(--dark-blue);
 }
 
+.post-toc {
+  background: #f3f4f6;
+  border: 1px solid #dbe0e6;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(13, 110, 253, 0.08);
+}
+
+.post-toc .toc-list {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  padding-left: 0.5rem;
+}
+
+.post-toc .toc-list .toc-list {
+  margin-top: 0.5rem;
+  padding-left: 1.25rem;
+}
+
+.post-toc .toc-link {
+  color: #1f2933;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+  display: inline-block;
+}
+
+.post-toc .toc-link:hover {
+  color: var(--primary-blue);
+  padding-left: 4px;
+}
+
+.author-bio {
+  background: #f7f8fb;
+  border: 1px solid #e1e6ed;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.author-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(0, 128, 255, 0.2);
+}
+
+.author-heading {
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5f6c7b;
+  margin-bottom: 0.75rem;
+}
+
+.author-name {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: #0f172a;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.author-name:hover {
+  color: var(--dark-blue);
+}
+
+.author-description {
+  font-size: 1.05rem;
+  color: #344054;
+  line-height: 1.7;
+}
+
+.author-description a {
+  color: var(--primary-blue);
+  text-decoration: underline;
+}
+
+.author-description a:hover {
+  color: var(--dark-blue);
+}
+
 .post-content ul,
 .post-content ol {
   margin-bottom: 1.5rem;
