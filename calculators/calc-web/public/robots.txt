@@ -1,0 +1,21 @@
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /?s=
+Disallow: /*?
+Disallow: /thank-you.html
+Disallow: /blog/author/
+Disallow: /*.pdf
+Disallow: /plugins/
+Disallow: /layouts/
+Disallow: /blog/category/
+Disallow: /wp-content/
+Disallow: /blog/*?*
+Disallow: /blog/*?
+Disallow: /?/
+Disallow: /blog/author/admin
+Disallow: /comments/feed/
+Disallow: /wp-content/plugins/
+Disallow: /sitemap.rss/
+
+Sitemap: https://www.finalgradescalculator.com/sitemap.xml
