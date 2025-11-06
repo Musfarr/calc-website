@@ -1,7 +1,8 @@
-import { useMemo, useState } from 'react';
+import { Fragment, useMemo, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 import Layout from '../components/Layout';
 
 const slugify = (text) =>
@@ -146,6 +147,39 @@ export default function BlogPost() {
     queryFn: fetchPost,
   });
 
+  const meta = post?.yoast_head_json;
+
+  const robotsContent = useMemo(() => {
+    if (!meta?.robots) {
+      return null;
+    }
+    const parts = Object.entries(meta.robots)
+      .map(([key, value]) => {
+        if (!value) {
+          return null;
+        }
+        if (key === 'index' || key === 'follow') {
+          return value;
+        }
+        return String(value);
+      })
+      .filter(Boolean);
+    return parts.length ? parts.join(', ') : null;
+  }, [meta]);
+
+  const schemaJson = useMemo(() => {
+    if (!meta?.schema) {
+      return null;
+    }
+    try {
+      return JSON.stringify(meta.schema);
+    } catch (err) {
+      return null;
+    }
+  }, [meta]);
+
+  const ogImages = meta?.og_image || [];
+
   const { content: processedContent, toc } = useMemo(
     () => processPostContent(post?.content?.rendered),
     [post?.content?.rendered]
@@ -184,29 +218,83 @@ export default function BlogPost() {
   };
 
   return (
-    <Layout title={post?.title.rendered || 'Blog Post'}>
-      <div className="calculator-container">
-        {/* Back to Blog Link */}
-        <Link to="/blog/" className="btn btn-outline-secondary mb-4">
-          ← Back to Blog
-        </Link>
+    <Fragment>
+      <Helmet>
+        <title>{meta?.title || post?.title?.rendered || 'Blog Post'}</title>
+        {meta?.description ? (
+          <meta name="description" content={meta.description} />
+        ) : null}
+        {robotsContent ? <meta name="robots" content={robotsContent} /> : null}
+        {meta?.og_locale ? <meta property="og:locale" content={meta.og_locale} /> : null}
+        {meta?.og_type ? <meta property="og:type" content={meta.og_type} /> : null}
+        {meta?.og_title ? <meta property="og:title" content={meta.og_title} /> : null}
+        {meta?.og_description ? (
+          <meta property="og:description" content={meta.og_description} />
+        ) : null}
+        {meta?.og_url ? <meta property="og:url" content={meta.og_url} /> : null}
+        {meta?.og_site_name ? (
+          <meta property="og:site_name" content={meta.og_site_name} />
+        ) : null}
+        {meta?.article_published_time ? (
+          <meta property="article:published_time" content={meta.article_published_time} />
+        ) : null}
+        {meta?.article_modified_time ? (
+          <meta property="article:modified_time" content={meta.article_modified_time} />
+        ) : null}
+        {ogImages.map((image) => {
+          if (!image?.url) {
+            return null;
+          }
+          return (
+            <Fragment key={image.url}>
+              <meta property="og:image" content={image.url} />
+              {image.width ? <meta property="og:image:width" content={String(image.width)} /> : null}
+              {image.height ? <meta property="og:image:height" content={String(image.height)} /> : null}
+              {image.type ? <meta property="og:image:type" content={image.type} /> : null}
+            </Fragment>
+          );
+        })}
+        {meta?.author ? <meta name="author" content={meta.author} /> : null}
+        {meta?.twitter_card ? <meta name="twitter:card" content={meta.twitter_card} /> : null}
+        {meta?.twitter_misc?.['Written by'] ? (
+          <meta name="twitter:label1" content="Written by" />
+        ) : null}
+        {meta?.twitter_misc?.['Written by'] ? (
+          <meta name="twitter:data1" content={meta.twitter_misc['Written by']} />
+        ) : null}
+        {meta?.twitter_misc?.['Est. reading time'] ? (
+          <meta name="twitter:label2" content="Est. reading time" />
+        ) : null}
+        {meta?.twitter_misc?.['Est. reading time'] ? (
+          <meta name="twitter:data2" content={meta.twitter_misc['Est. reading time']} />
+        ) : null}
+        {schemaJson ? (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaJson }} />
+        ) : null}
+      </Helmet>
+      <Layout title={post?.title.rendered || 'Blog Post'}>
+        <div className="calculator-container">
+          {/* Back to Blog Link */}
+          <Link to="/blog/" className="btn btn-outline-secondary mb-4">
+            ← Back to Blog
+          </Link>
 
-        {isLoading && (
-          <div className="text-center py-5">
-            <div className="spinner-border text-primary" role="status">
-              <span className="visually-hidden">Loading...</span>
+          {isLoading && (
+            <div className="text-center py-5">
+              <div className="spinner-border text-primary" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {isError && (
-          <div className="alert alert-danger">
-            <strong>Error loading post:</strong> {error.message}
-          </div>
-        )}
+          {isError && (
+            <div className="alert alert-danger">
+              <strong>Error loading post:</strong> {error.message}
+            </div>
+          )}
 
-        {post && (
-          <article>
+          {post && (
+            <article>
             {/* Post Header */}
             <header className="mb-4">
               <h1 className="mb-3 text-white">{post.title.rendered}</h1>
@@ -291,9 +379,10 @@ export default function BlogPost() {
                 ← Back to Blog
               </Link>
             </div>
-          </article>
-        )}
-      </div>
-    </Layout>
+            </article>
+          )}
+        </div>
+      </Layout>
+    </Fragment>
   );
 }
