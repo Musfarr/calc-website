@@ -163,7 +163,7 @@ export default function BlogPost() {
     return {
       name: authorData.name || 'Author',
       description: authorData.description || '',
-      url: authorData.link || '',
+      url: 'https://www.linkedin.com/in/mudassir-ahmed-0991261b9',
       avatar,
     };
   }, [post]);
