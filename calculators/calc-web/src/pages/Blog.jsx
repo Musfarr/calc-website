@@ -2,7 +2,7 @@ import Layout from '../components/Layout';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-
+import { Helmet } from 'react-helmet-async';
 
 export default function Blog() {
   const fetchPosts = async () => {
@@ -38,6 +38,16 @@ export default function Blog() {
   };
 
     return (
+
+      <>
+      <Helmet> 
+        <title>Final Grades Calculator | Study Tips, GPA Guides & Exam Insights</title>
+        <meta
+          name="description"
+          content="Explore the Final Grades Calculator blog for expert study advice, GPA calculation guides, exam prep strategies, and success tips. Learn how to boost your grades."
+        />
+        <link rel="canonical" href="https://www.finalgradescalculator.com/blog/" />
+      </Helmet>
     <Layout title="Blog">
       <div className="calculator-container">
         <h2 className="mb-4">Blog</h2>
@@ -104,5 +114,6 @@ export default function Blog() {
         
       </div>
     </Layout>
+    </>
   );
 }
