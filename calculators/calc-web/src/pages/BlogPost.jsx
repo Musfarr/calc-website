@@ -1,5 +1,5 @@
 import { Fragment, useMemo, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { Helmet } from 'react-helmet-async';
@@ -133,6 +133,8 @@ export default function BlogPost() {
   const { slug } = useParams();
   const [isTocOpen, setIsTocOpen] = useState(true);
 
+  const location = useLocation();
+  console.log(location, 'loc')
   const tocListId = useMemo(() => (slug ? `toc-list-${slug}` : 'post-toc-list'), [slug]);
 
   const fetchPost = async () => {
@@ -271,6 +273,7 @@ export default function BlogPost() {
         {schemaJson ? (
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaJson }} />
         ) : null}
+        <link rel="canonical" href={'https://www.finalgradescalculator.com' +   location?.pathname} />
       </Helmet>
       <Layout title={post?.title.rendered || 'Blog Post'}>
         <div className="calculator-container">
