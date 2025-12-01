@@ -134,7 +134,6 @@ export default function BlogPost() {
   const [isTocOpen, setIsTocOpen] = useState(true);
 
   const location = useLocation();
-  console.log(location, 'loc')
   const tocListId = useMemo(() => (slug ? `toc-list-${slug}` : 'post-toc-list'), [slug]);
 
   const fetchPost = async () => {

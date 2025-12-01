@@ -102,7 +102,7 @@ export default function GradeCalculator() {
   return (
     <>
     <Helmet>
-      <title>Grade Calculator | Track Your Academic Progress</title>
+      <title>Grade Calculator - Effortless Grade Calculation</title>
       <meta name="description" content="This grade calculator makes the calculation very easy. Enter your values and get instant results. Follow our simple guide to calculate your grades easily." />
       {/* <meta name="keywords" content="grade calculator, weighted grade calculator, academic progress tracker" /> */}
       <meta name="author" content="Final Grades Calculator" />
