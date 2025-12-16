@@ -137,10 +137,10 @@ export default function BlogPost() {
   const tocListId = useMemo(() => (slug ? `toc-list-${slug}` : 'post-toc-list'), [slug]);
 
   const fetchPost = async () => {
-    const response = await axios.get(
-      `https://wp-calc-blog.page.gd/wp-json/wp/v2/posts?slug=${slug}&_embed`
-    );
-    return response.data[0]; // WordPress returns an array, get first item
+    const response = await axios.get('/api/wp/post', {
+      params: { slug },
+    });
+    return response.data;
   };
 
   const { data: post, isLoading, isError, error } = useQuery({

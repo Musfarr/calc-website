@@ -6,10 +6,10 @@ import { Helmet } from 'react-helmet-async';
 
 export default function Blog() {
   const fetchPosts = async () => {
-    const response = await axios.get('https://wp-calc-blog.page.gd/wp-json/wp/v2/posts?_embed');
+    const response = await axios.get('/api/wp/posts');
     return response.data;
   };
-  const { data: posts, isLoading } = useQuery({
+  const { data: posts, isLoading, isError, error } = useQuery({
     queryKey: ['posts'],
     queryFn: fetchPosts,
   });
@@ -71,6 +71,14 @@ export default function Blog() {
             <div className="col-12 d-flex justify-content-center my-4">
               <div className="spinner-border text-primary" role="status">
                 <span className="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          )}
+
+          {isError && (
+            <div className="col-12 my-3">
+              <div className="alert alert-danger mb-0">
+                <strong>Error loading posts:</strong> {error?.message || 'Unknown error'}
               </div>
             </div>
           )}
