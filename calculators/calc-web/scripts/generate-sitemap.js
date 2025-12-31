@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const SITE_URL = 'https://www.finalgradescalculator.com';
-const WORDPRESS_API = 'https://wp-calc-blog.page.gd/wp-json/wp/v2/posts';
+const WORDPRESS_API = 'https://calculator.risenxagency.com/wp-json/wp/v2/posts';
 
 // Static routes with their priorities
 const staticRoutes = [

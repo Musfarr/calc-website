@@ -84,7 +84,7 @@ export default function Blog() {
           )}
 
           {/* Blog Post Cards */}
-          {!isLoading && posts?.map((post) => (
+          {!isLoading && Array.isArray(posts) && posts.map((post) => (
             <div key={post.id} className="col-md-4 mb-4">
               <div className="card h-100 shadow-sm hover-shadow">
                 {/* Featured Image */}

@@ -1,4 +1,4 @@
-const WORDPRESS_BASE_URL = 'https://wp-calc-blog.page.gd/wp-json/wp/v2';
+const WORDPRESS_BASE_URL = 'https://calculator.risenxagency.com/wp-json/wp/v2';
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
@@ -41,7 +41,13 @@ export default async function handler(req, res) {
       return res.status(wpResponse.status).send(text);
     }
 
-    return res.status(200).send(text);
+    const posts = JSON.parse(text);
+    if (!Array.isArray(posts)) {
+      console.error('WP API did not return an array:', posts);
+      return res.status(200).json([]);
+    }
+
+    return res.status(200).json(posts);
   } catch (error) {
     return res.status(502).json({ error: 'Bad Gateway', message: error?.message || 'Unknown error' });
   }

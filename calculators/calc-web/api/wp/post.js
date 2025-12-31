@@ -1,4 +1,4 @@
-const WORDPRESS_BASE_URL = 'https://wp-calc-blog.page.gd/wp-json/wp/v2';
+const WORDPRESS_BASE_URL = 'https://calculator.risenxagency.com/wp-json/wp/v2';
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
