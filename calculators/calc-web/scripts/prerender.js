@@ -74,7 +74,7 @@ const run = async () => {
     staticDir: path.join(process.cwd(), 'dist'),
     routes,
     renderer: new PuppeteerRenderer({
-      headless: 'new',
+      headless: true,
       renderAfterTime: 8000,
     }),
   });
