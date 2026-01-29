@@ -1,6 +1,7 @@
 import path from 'path';
 import Prerenderer from '@prerenderer/prerenderer';
 import PuppeteerRenderer from '@prerenderer/renderer-puppeteer';
+import chromium from '@sparticuz/chromium';
 
 const WORDPRESS_BASE_URL = 'https://calculator.risenxagency.com/wp-json/wp/v2';
 
@@ -70,12 +71,22 @@ const buildRoutes = async () => {
 const run = async () => {
   const routes = await buildRoutes();
 
+  const isCi = Boolean(process.env.CI || process.env.VERCEL);
+  const executablePath = isCi ? await chromium.executablePath() : undefined;
+
   const prerenderer = new Prerenderer({
     staticDir: path.join(process.cwd(), 'dist'),
     routes,
     renderer: new PuppeteerRenderer({
       headless: true,
       renderAfterTime: 8000,
+      ...(executablePath
+        ? {
+            executablePath,
+            args: chromium.args,
+            defaultViewport: chromium.defaultViewport,
+          }
+        : {}),
     }),
   });
 
