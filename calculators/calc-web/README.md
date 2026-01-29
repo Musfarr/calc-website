@@ -39,3 +39,13 @@ Prerendering is a **build-time snapshot**.
 - The app will still **fetch and show the latest posts client-side**, but SEO tools that only read the server HTML won’t see new meta tags until rebuild.
 
 **Recommendation:** trigger a Vercel build on new WordPress posts (webhook) so new slugs are prerendered and indexed quickly.
+
+### Vercel CI (prebuilt deploy)
+Vercel build containers do not include Chromium system libraries, so prerendering can fail there. This repo includes a GitHub Actions workflow that builds + prerenders on Ubuntu and deploys a **prebuilt** artifact to Vercel.
+
+1. Add these GitHub secrets:
+   - `VERCEL_TOKEN`
+   - `VERCEL_ORG_ID`
+   - `VERCEL_PROJECT_ID`
+2. Ensure your default branch is `main` (or update `.github/workflows/vercel-prebuilt.yml`).
+3. In Vercel project settings, disable “Automatic Deployments” to avoid double builds.
