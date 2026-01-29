@@ -73,20 +73,21 @@ const run = async () => {
 
   const isCi = Boolean(process.env.CI || process.env.VERCEL);
   const executablePath = isCi ? await chromium.executablePath() : undefined;
+  const launchOptions = executablePath
+    ? {
+        executablePath,
+        args: chromium.args,
+        defaultViewport: chromium.defaultViewport,
+        headless: chromium.headless,
+      }
+    : { headless: true };
 
   const prerenderer = new Prerenderer({
     staticDir: path.join(process.cwd(), 'dist'),
     routes,
     renderer: new PuppeteerRenderer({
-      headless: true,
       renderAfterTime: 8000,
-      ...(executablePath
-        ? {
-            executablePath,
-            args: chromium.args,
-            defaultViewport: chromium.defaultViewport,
-          }
-        : {}),
+      launchOptions,
     }),
   });
 
