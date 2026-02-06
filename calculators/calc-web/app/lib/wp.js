@@ -21,7 +21,6 @@ export async function fetchPosts(params = {}) {
   const res = await fetch(url.toString(), {
     headers: {
       Accept: 'application/json',
-      'User-Agent': 'finalgrades-next-app',
     },
     ...defaultFetchOptions,
   });

@@ -11,7 +11,7 @@ export default function BlogList() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await fetch('https://calculator.risenxagency.com/wp-json/wp/v2/posts?_embed&per_page=20');
+        const res = await fetch('/api/wp/posts?_embed&per_page=20');
         if (!res.ok) throw new Error('Failed to fetch posts');
         const data = await res.json();
         setPosts(Array.isArray(data) ? data : []);
