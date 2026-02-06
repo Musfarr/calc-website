@@ -1,19 +1,14 @@
+'use client';
+
 import { useState } from 'react';
 import Layout from '../components/Layout';
 import CalculatorNav from '../components/CalculatorNav';
-import { Helmet } from 'react-helmet-async';
 
 export default function PercentageCalculator() {
-  // Type 1: What is X% of Y?
   const [type1, setType1] = useState({ percent: '', number: '', result: null });
-  
-  // Type 2: X is what percent of Y?
   const [type2, setType2] = useState({ number1: '', number2: '', result: null });
-  
-  // Type 3: Percent increase/decrease
   const [type3, setType3] = useState({ original: '', new: '', result: null });
 
-  // Calculate Type 1: What is X% of Y?
   const calculateType1 = () => {
     const percent = parseFloat(type1.percent);
     const number = parseFloat(type1.number);
@@ -27,7 +22,6 @@ export default function PercentageCalculator() {
     setType1({ ...type1, result: result.toFixed(2) });
   };
 
-  // Calculate Type 2: X is what percent of Y?
   const calculateType2 = () => {
     const number1 = parseFloat(type2.number1);
     const number2 = parseFloat(type2.number2);
@@ -41,7 +35,6 @@ export default function PercentageCalculator() {
     setType2({ ...type2, result: result.toFixed(2) });
   };
 
-  // Calculate Type 3: Percent increase/decrease
   const calculateType3 = () => {
     const original = parseFloat(type3.original);
     const newValue = parseFloat(type3.new);
@@ -92,45 +85,9 @@ export default function PercentageCalculator() {
 
   return (
     <>
-    <Helmet>
-      <title>Online Percentage Calculator - Put the Value, Get the Answer</title>
-      <meta name="description" content="With this percentage calculator, you can easily calculate the percentage of a value, what percent one is of another, & the percentage difference. Click Now!" />
-      {/* <meta name="keywords" content="percentage calculator, percent change calculator, percent of number" /> */}
-      <meta name="author" content="Final Grades Calculator" />
-      <meta name="robots" content="index, follow" />
-
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://www.finalgradescalculator.com/percentage-calculator/" />
-      <meta property="og:title" content="Online Percentage Calculator - Put the Value, Get the Answer" />
-      <meta property="og:description" content="With this percentage calculator, you can easily calculate the percentage of a value, what percent one is of another, & the percentage difference. Click Now!" />
-      <meta property="og:image" content="https://www.finalgradescalculator.com/images/og-default.png" />
-      <meta property="og:site_name" content="Final Grades Calculator" />
-
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:url" content="https://www.finalgradescalculator.com/percentage-calculator/" />
-      <meta name="twitter:title" content="Online Percentage Calculator - Put the Value, Get the Answer" />
-      <meta name="twitter:description" content="With this percentage calculator, you can easily calculate the percentage of a value, what percent one is of another, & the percentage difference. Click Now!" />
-      <meta name="twitter:image" content="https://www.finalgradescalculator.com/images/og-default.png" />
-
-      <link rel="canonical" href="https://www.finalgradescalculator.com/percentage-calculator/" />
-      <link rel="alternate" hreflang="en" href="https://www.finalgradescalculator.com/percentage-calculator/" />
-
-      <link rel="icon" href="/6.png" type="image/png" />
-      <link rel="apple-touch-icon" href="/6.png" />
-
-      <meta name="language" content="en" />
-      <meta name="geo.region" content="US" />
-      <meta name="theme-color" content="#ffffff" />
-      <meta name="apple-mobile-web-app-title" content="Final Grades Calculator" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-      <meta name="format-detection" content="telephone=no" />
-      <script type="application/ld+json">
-        {JSON.stringify(schemaData)}
-      </script>
-    </Helmet>
-    <Layout title="Percentage Calculator">
-      <div className="calculator-container">
-        <h1 className="mb-4 text-white">Percentage Calculator</h1>
+      <Layout>
+        <h1 className="mb-4">Percentage Calculator</h1>
+        <div className="calculator-container">
         <p className="text-muted">
           Calculate percentages quickly with these three useful calculators.
         </p>
@@ -296,8 +253,9 @@ export default function PercentageCalculator() {
         </div>
       </div>
 
+        <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
       <CalculatorNav />
-    </Layout>
+      </Layout>
     </>
   );
 }

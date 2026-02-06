@@ -1,7 +1,8 @@
+'use client';
+
 import { useState } from 'react';
 import Layout from '../components/Layout';
 import CalculatorNav from '../components/CalculatorNav';
-import { Helmet } from 'react-helmet-async';
 
 export default function FinalGradeCalculator() {
   const [currentGrade, setCurrentGrade] = useState('');
@@ -9,13 +10,11 @@ export default function FinalGradeCalculator() {
   const [finalWeight, setFinalWeight] = useState('');
   const [result, setResult] = useState(null);
 
-  // Calculate required final exam grade
   const calculateFinalGrade = () => {
     const current = parseFloat(currentGrade);
     const desired = parseFloat(desiredGrade);
     const weight = parseFloat(finalWeight);
 
-    // Validation
     if (isNaN(current) || isNaN(desired) || isNaN(weight)) {
       alert('Please enter valid numbers in all fields');
       return;
@@ -31,10 +30,8 @@ export default function FinalGradeCalculator() {
       return;
     }
 
-    // Formula: Required Final = (Desired Grade - Current Grade * (1 - Final Weight)) / Final Weight
     const currentWeight = (100 - weight) / 100;
     const finalWeightDecimal = weight / 100;
-    
     const requiredFinal = (desired - (current * currentWeight)) / finalWeightDecimal;
 
     setResult({
@@ -44,7 +41,6 @@ export default function FinalGradeCalculator() {
     });
   };
 
-  // Convert number grade to letter grade
   const getLetterGrade = (grade) => {
     if (grade >= 90) return 'A';
     if (grade >= 80) return 'B';
@@ -53,7 +49,6 @@ export default function FinalGradeCalculator() {
     return 'F';
   };
 
-  // Reset calculator
   const resetCalculator = () => {
     setCurrentGrade('');
     setDesiredGrade('');
@@ -88,45 +83,9 @@ export default function FinalGradeCalculator() {
 
   return (
     <>
-    <Helmet>
-      <title>Final Grade Calculator - Easy Calculation</title>
-      <meta name="description" content="Curious about what grades you need to reach your goal? Use this easy-to-use Final Grade Calculator with clear instructions and plan your success today!" />
-      {/* <meta name="keywords" content="final grade calculator, required final exam score, academic planning, grade planner" /> */}
-      <meta name="author" content="Final Grades Calculator" />
-      <meta name="robots" content="index, follow" />
-
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://www.finalgradescalculator.com/" />
-      <meta property="og:title" content="Final Grades Calculator | Plan Your Academic Grades Strategically" />
-      <meta property="og:description" content="Curious about what grades you need to reach your goal? Use this easy-to-use Final Grade Calculator with clear instructions and plan your success today!" />
-      <meta property="og:image" content="https://www.finalgradescalculator.com/images/og-default.png" />
-      <meta property="og:site_name" content="Final Grades Calculator" />
-
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:url" content="https://www.finalgradescalculator.com/" />
-      <meta name="twitter:title" content="Final Grades Calculator | Plan Your Academic Grades Strategically" />
-      <meta name="twitter:description" content="Curious about what grades you need to reach your goal? Use this easy-to-use Final Grade Calculator with clear instructions and plan your success today!" />
-      <meta name="twitter:image" content="https://www.finalgradescalculator.com/images/og-default.png" />
-
-      <link rel="canonical" href="https://www.finalgradescalculator.com/" />
-      <link rel="alternate" hreflang="en" href="https://www.finalgradescalculator.com/" />
-
-      <link rel="icon" href="/6.png" type="image/png" />
-      <link rel="apple-touch-icon" href="/6.png" />
-
-      <meta name="language" content="en" />
-      <meta name="geo.region" content="PK" />
-      <meta name="theme-color" content="#ffffff" />
-      <meta name="apple-mobile-web-app-title" content="Final Grades Calculator" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-      <meta name="format-detection" content="telephone=no" />
-      <script type="application/ld+json">
-        {JSON.stringify(schemaData)}
-      </script>
-    </Helmet>
-        <Layout title="Final Grade Calculator">
-      <div className="calculator-container">
-        <h1 className="mb-4 text-white">Final Grade Calculator</h1>
+      <Layout>
+        <h1 className="mb-4">Final Grade Calculator</h1>
+        <div className="calculator-container">
         <p className="text-muted">
           Calculate what grade you need on your final exam to achieve your desired course grade.
         </p>
@@ -196,7 +155,6 @@ export default function FinalGradeCalculator() {
           </button>
         </div>
 
-        {/* Result Display */}
         {result && (
           <div className={`result-display ${result.achievable ? '' : 'border-warning'}`}>
             <h3>Required Final Exam Grade</h3>
@@ -223,42 +181,11 @@ export default function FinalGradeCalculator() {
           </div>
         )}
 
-        {/* Example Section */}
-        {/* <div className="mt-4 p-3 bg-light rounded">
-          <h5>Example:</h5>
-          <p className="mb-2">
-            If you have an <strong>85%</strong> in the class, want to achieve a <strong>90%</strong> final grade, 
-            and the final exam is worth <strong>30%</strong> of your grade:
-          </p>
-          <ul className="mb-0">
-            <li>Current grade contribution: 85% × 70% = 59.5%</li>
-            <li>Desired total: 90%</li>
-            <li>Required from final: 90% - 59.5% = 30.5%</li>
-            <li>Required final grade: 30.5% ÷ 30% = <strong>101.67%</strong> (Not achievable)</li>
-          </ul>
-        </div> */}
-
-        {/* How to Use */}
-        {/* <div className="mt-3 p-3 bg-light rounded">
-          <h5>How to Use:</h5>
-          <ol className="mb-0">
-            <li>Enter your current grade in the class (before the final exam)</li>
-            <li>Enter the grade you want to achieve in the class</li>
-            <li>Enter what percentage of your grade the final exam is worth</li>
-            <li>Click "Calculate" to see what you need to score on the final</li>
-          </ol>
-        </div> */}
-
-
-
-
-
-        <div className="mt-3 p-3 bg-light rounded">
+        <div className="mt-4 p-3 bg-light rounded">
           <h2 className='mt-2 fw-bold'>How to Use a Final Grade Calculator?</h2>
 
           <div className="">
-          <ol className="mb-0">
-            <p><strong>Here’s a step-by-step guide on how to use a Final Grade Calculator:</strong></p>
+            <p><strong>Here's a step-by-step guide on how to use a Final Grade Calculator:</strong></p>
             <p>
               Enter your current grade before the final exam in the "Current Grade (%)" field, the final grade you want to achieve in the "Desired Grade (%)" field, and how much the final exam is worth in the "Final Exam Weight (%)" field. Then click "Calculate Required Grade" to see the result.
             </p>
@@ -268,27 +195,23 @@ export default function FinalGradeCalculator() {
             <p>Required grade is 80% (or B-).</p>
             <p>The final exam grade is equal to the required grade, minus 100% minus the final exam weight (wfinal) times the current grade (g), divided by the final exam weight (w):</p>
             <p>Final exam grade = (80% - (100% - 50%) * 70%) / 50% = 86%</p>
-          <p> <strong>So Final exam grade =</strong></p>
-              <p>=
-                required grade - (100% - wfinal)×current grade
-                wfinal
-                =
-                80% - (100% - 50%)×70%
-                50%
-                = 90%
-              </p>
-              <p>So the final exam grade should be 90% (or A-).</p>
-          </ol>
-
-
+            <p> <strong>So Final exam grade =</strong></p>
+            <p>=
+              required grade - (100% - wfinal)×current grade
+              wfinal
+              =
+              80% - (100% - 50%)×70%
+              50%
+              = 90%
+            </p>
+            <p>So the final exam grade should be 90% (or A-).</p>
           </div>
-
-          
         </div>
       </div>
 
-      <CalculatorNav />
-    </Layout>
+        <CalculatorNav />
+        <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
+      </Layout>
     </>
   );
 }

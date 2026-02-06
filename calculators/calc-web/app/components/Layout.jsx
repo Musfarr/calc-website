@@ -1,19 +1,21 @@
-import { Link, useLocation } from 'react-router-dom';
-import logo from '/5.png';
-export default function Layout({ children, title }) {
-  const location = useLocation();
+"use client";
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import Script from 'next/script';
+
+export default function Layout({ children }) {
+  const pathname = usePathname();
 
   return (
     <>
-      {/* Header with Navigation */}
+      <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" strategy="afterInteractive" />
       <header className="gradient-header">
         <div className="container-fluid">
           <div className="row align-items-center py-3 mx-4">
             <div className="col-6 col-md-6">
-              <Link to="/" className="text-decoration-none text-white">
-                <img src={logo} alt="Logo" className="logo-img img-fluid" />
-                {/* <h1 className="mb-0 h3">🧮 Calculator Hub</h1> */}
-                {/* <p className="mb-0 small">Free Online Calculators for Students</p> */}
+              <Link href="/" className="text-decoration-none text-white">
+                <img src="/5.png" alt="Logo" className="logo-img img-fluid" />
               </Link>
             </div>
             <div className="col-6 col-md-6">
@@ -29,9 +31,9 @@ export default function Layout({ children, title }) {
                 <div className="collapse navbar-collapse justify-content-end" id="mainNav">
                   <ul className="navbar-nav">
                     <li className="nav-item">
-                      <Link 
-                        to="/" 
-                        className={`nav-link ${location.pathname === '/' ? 'active fw-bold' : ''}`}
+                      <Link
+                        href="/"
+                        className={`nav-link ${pathname === '/' ? 'active fw-bold' : ''}`}
                       >
                         Home
                       </Link>
@@ -47,16 +49,16 @@ export default function Layout({ children, title }) {
                         Calculators
                       </a>
                       <ul className="dropdown-menu">
-                        <li><Link className="dropdown-item" to="/">Final Grade Calculator</Link></li>
-                        <li><Link className="dropdown-item" to="/grade-calculator/">Grade Calculator</Link></li>
-                        <li><Link className="dropdown-item" to="/percentage-calculator/">Percentage Calculator</Link></li>
-                        <li><Link className="dropdown-item" to="/gpa-calculator/">GPA Calculator</Link></li>
+                        <li><Link className="dropdown-item" href="/">Final Grade Calculator</Link></li>
+                        <li><Link className="dropdown-item" href="/grade-calculator/">Grade Calculator</Link></li>
+                        <li><Link className="dropdown-item" href="/percentage-calculator/">Percentage Calculator</Link></li>
+                        <li><Link className="dropdown-item" href="/gpa-calculator/">GPA Calculator</Link></li>
                       </ul>
                     </li>
                     <li className="nav-item">
-                      <Link 
-                        to="/blog/" 
-                        className={`nav-link ${location.pathname.startsWith('/blog') ? 'active fw-bold' : ''}`}
+                      <Link
+                        href="/blog/"
+                        className={`nav-link ${pathname.startsWith('/blog') ? 'active fw-bold' : ''}`}
                       >
                         Blog
                       </Link>
@@ -69,40 +71,28 @@ export default function Layout({ children, title }) {
         </div>
       </header>
 
-      {/* Top Ad */}
       <div className="container-fluid mt-3">
-        <div id="ad-top" className="ad-laceholder">
-          {/* <small>Ad</small> */}
-        </div>
+        <div id="ad-top" className="ad-laceholder"></div>
       </div>
 
-      {/* Main Content - Full Width */}
-      <div className="container-fluid " >
+      <div className="container-fluid">
         <div className="row">
-          {/* Left Sidebar Ad - Smaller */}
           <div className="col-xl-2 d-none d-xl-block">
-            <div id="ad-left" className="ad-laceholder sticky-top" style={{ top: '20px' }}>
-              {/* <small>Ad</small> */}
-            </div>
+            <div id="ad-left" className="ad-laceholder sticky-top" style={{ top: '20px' }}></div>
           </div>
 
-          {/* Main Content - Full Width */}
           <div className="col-xl-8 col-12">
             <div className="px-md-4">
               {children}
             </div>
           </div>
 
-          {/* Right Sidebar Ad - Smaller */}
           <div className="col-xl-2 d-none d-xl-block">
-            <div id="ad-right" className="ad-laceholder sticky-top" style={{ top: '20px' }}>
-              {/* <small>Ad</small> */}
-            </div>
+            <div id="ad-right" className="ad-laceholder sticky-top" style={{ top: '20px' }}></div>
           </div>
         </div>
       </div>
 
-      {/* Footer */}
       <footer className="mt-5">
         <div className="container-fluid">
           <div className="row">
@@ -110,10 +100,10 @@ export default function Layout({ children, title }) {
               <p className="mb-2">&copy; 2025 Final Grades Calculator. All rights reserved.</p>
             </div>
             <div className="col-md-6 text-center text-md-end">
-              <Link to="/">Home</Link>
-              <Link to="/blog/">Blog</Link>
-              <Link to="/privacy/">Privacy Policy</Link>
-              <Link to="/terms/">Terms & Conditions</Link>
+              <Link href="/">Home</Link>
+              <Link href="/blog/">Blog</Link>
+              <Link href="/privacy/">Privacy Policy</Link>
+              <Link href="/terms/">Terms & Conditions</Link>
             </div>
           </div>
         </div>

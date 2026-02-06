@@ -6,11 +6,13 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
+legacy/
 node_modules
 dist
 dist-ssr
 *.local
+.next
+out
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +24,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Next.js
+.env.local
+.env.*.local
