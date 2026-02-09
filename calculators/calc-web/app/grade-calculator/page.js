@@ -4,7 +4,9 @@ import GradeCalculator from '../calculators/GradeCalculator';
 export const metadata = {
   title: 'Grade Calculator - Effortless Grade Calculation',
   description: 'This grade calculator makes the calculation very easy. You can calculate the grade by entering the scores and weights.',
-  canonical: 'https://www.finalgradescalculator.com/grade-calculator/',
+  alternates: {
+    canonical: 'https://www.finalgradescalculator.com/grade-calculator/',
+  },
   openGraph: {
     title: 'Grade Calculator - Effortless Grade Calculation',
     description: 'This grade calculator makes the calculation very easy. You can calculate the grade by entering the scores and weights.',

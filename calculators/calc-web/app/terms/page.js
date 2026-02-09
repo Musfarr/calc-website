@@ -4,7 +4,9 @@ import Layout from '../components/Layout';
 export const metadata = {
   title: 'Terms & Conditions - Final Grades Calculator',
   description: 'Terms and conditions for Final Grades Calculator.',
-  canonical: 'https://www.finalgradescalculator.com/terms/',
+  alternates: {
+    canonical: 'https://www.finalgradescalculator.com/terms/',
+  },
 };
 
 export default function TermsPage() {

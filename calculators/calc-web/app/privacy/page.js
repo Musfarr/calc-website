@@ -4,7 +4,9 @@ import Layout from '../components/Layout';
 export const metadata = {
   title: 'Privacy Policy - Final Grades Calculator',
   description: 'Privacy policy for Final Grades Calculator.',
-  canonical: 'https://www.finalgradescalculator.com/privacy/',
+  alternates: {
+    canonical: 'https://www.finalgradescalculator.com/privacy/',
+  },
 };
 
 export default function PrivacyPage() {

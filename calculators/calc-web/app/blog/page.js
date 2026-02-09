@@ -5,7 +5,9 @@ import BlogList from '../components/BlogList';
 export const metadata = {
   title: 'Blog - Final Grades Calculator',
   description: 'Read our latest articles about grades, calculators, and educational tips.',
-  canonical: 'https://www.finalgradescalculator.com/blog/',
+  alternates: {
+    canonical: 'https://www.finalgradescalculator.com/blog/',
+  },
   openGraph: {
     title: 'Blog - Final Grades Calculator',
     description: 'Read our latest articles about grades, calculators, and educational tips.',
