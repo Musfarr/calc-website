@@ -1,8 +1,6 @@
 {
   "/page": "app/page.js",
-  "/grade-calculator/page": "app/grade-calculator/page.js",
-  "/gpa-calculator/page": "app/gpa-calculator/page.js",
-  "/blog/[slug]/page": "app/blog/[slug]/page.js",
   "/blog/page": "app/blog/page.js",
-  "/percentage-calculator/page": "app/percentage-calculator/page.js"
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
+  "/api/wp/[...path]/route": "app/api/wp/[...path]/route.js"
 }
