@@ -31,8 +31,22 @@ export async function fetchPosts(params = {}) {
 }
 
 export async function fetchPostBySlug(slug) {
-  const posts = await fetchPosts({ slug, per_page: 1 });
-  return Array.isArray(posts) ? posts[0] : null;
+  const url = new URL(`${WORDPRESS_BASE_URL}/posts`);
+  url.searchParams.set('slug', slug);
+  url.searchParams.set('per_page', '1');
+  url.searchParams.set('_embed', '');
+
+  const res = await fetch(url.toString(), {
+    headers: {
+      Accept: 'application/json',
+    },
+    cache: 'no-store',
+  });
+  if (!res.ok) {
+    return null;
+  }
+  const posts = await res.json();
+  return Array.isArray(posts) && posts.length > 0 ? posts[0] : null;
 }
 
 export function getPostMeta(post) {

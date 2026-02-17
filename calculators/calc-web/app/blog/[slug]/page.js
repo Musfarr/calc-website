@@ -3,6 +3,13 @@ import Layout from '../../components/Layout';
 import BlogPost from '../../components/BlogPost';
 import { fetchPostBySlug, getPostMeta } from '../../lib/wp';
 
+// Allow dynamic rendering for new posts not in generateStaticParams
+export const dynamicParams = true;
+
+// Force dynamic rendering to always fetch fresh data
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function generateMetadata({ params }) {
   try {
     const post = await fetchPostBySlug(params.slug);
@@ -49,7 +56,7 @@ export async function generateMetadata({ params }) {
 export async function generateStaticParams() {
   try {
     const res = await fetch('https://calculator.risenxagency.com/wp-json/wp/v2/posts?per_page=100', {
-      next: { revalidate: 3600 },
+      cache: 'no-store',
     });
     if (!res.ok) return [];
     const posts = await res.json();
