@@ -6,6 +6,9 @@ export const metadata = {
   title: 'Final Grades Calculator',
   description: 'Free online calculators for grades, percentages, GPA, and study tips.',
   metadataBase: new URL('https://www.finalgradescalculator.com'),
+  verification: {
+    google: 'W6mdz3UFQov4AHLi75xcXIof40PTo3uT0wjJWS_au2c',
+  },
 };
 
 export default function RootLayout({ children }) {
