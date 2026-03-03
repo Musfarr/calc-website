@@ -9,6 +9,11 @@ export const metadata = {
   verification: {
     google: 'W6mdz3UFQov4AHLi75xcXIof40PTo3uT0wjJWS_au2c',
   },
+  alternates: {
+    languages: {
+      'en-US': 'https://www.finalgradescalculator.com/',
+    },
+  },
 };
 
 export default function RootLayout({ children }) {
