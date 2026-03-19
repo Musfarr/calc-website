@@ -18,7 +18,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en-US">
       <head>
         <link rel="icon" href="/6.png" />
         <link rel="apple-touch-icon" href="/6.png" />

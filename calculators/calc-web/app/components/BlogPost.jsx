@@ -198,7 +198,7 @@ export default function BlogPost({ post }) {
             )}
             <div>
               <div className="author-heading">About the Author</div>
-              <a href={author.link} className="author-name">
+              <a href="https://www.linkedin.com/in/mudassir-ahmed-0991261b9" className="author-name">
                 {author.name}
               </a>
               <p className="author-description">{author.description}</p>
