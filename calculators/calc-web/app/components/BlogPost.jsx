@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import Script from 'next/script';
 
 const slugify = (text) =>
   text
@@ -143,8 +144,45 @@ export default function BlogPost({ post }) {
     [post?.content?.rendered]
   );
 
+  const articleSchema = useMemo(() => {
+    if (!post) return null;
+
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: post.title.rendered,
+      description: post.excerpt?.rendered?.replace(/<[^>]*>/g, '') || '',
+      url: `https://www.finalgradescalculator.com/blog/${post.slug}/`,
+      datePublished: post.date,
+      dateModified: post.modified,
+    };
+
+    if (featured) {
+      schema.image = featured.source_url;
+    }
+
+    if (author) {
+      schema.author = {
+        '@type': 'Person',
+        name: author.name,
+        url: author.link,
+      };
+    }
+
+    return schema;
+  }, [post, featured, author]);
+
   return (
     <>
+      {articleSchema && (
+        <Script
+          id="article-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+          strategy="afterInteractive"
+        />
+      )}
+
       {featured && (
         <div style={{ marginBottom: '2rem' }}>
           <img
@@ -161,6 +199,19 @@ export default function BlogPost({ post }) {
       )}
 
       <h1>{post.title.rendered}</h1>
+
+      <div className="post-meta mb-4" style={{ fontSize: '0.95rem', color: '#666' }}>
+        {post.date && (
+          <span>
+            Published: <time dateTime={post.date}>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+          </span>
+        )}
+        {post.modified && post.modified !== post.date && (
+          <span style={{ marginLeft: '1.5rem' }}>
+            Last Updated: <time dateTime={post.modified}>{new Date(post.modified).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+          </span>
+        )}
+      </div>
 
       {toc.length > 0 && (
         <nav className="post-toc mb-4">
