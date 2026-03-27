@@ -161,13 +161,13 @@ export default function BlogPost({ post }) {
       schema.image = featured.source_url;
     }
 
-    if (author) {
-      schema.author = {
-        '@type': 'Person',
-        name: author.name,
-        url: author.link,
-      };
-    }
+    // if (author) {
+    //   schema.author = {
+    //     '@type': 'Person',
+    //     name: author.name,
+    //     url: author.link,
+    //   };
+    // }
 
     return schema;
   }, [post, featured, author]);
