@@ -182,29 +182,123 @@ export default function FinalGradeCalculator() {
         )}
 
         <div className="mt-4 p-3 bg-light rounded">
-          <h2 className='mt-2 fw-bold'>How to Use a Final Grade Calculator?</h2>
+          <h2 className="mt-2 fw-bold">What Is a Final Grade Calculator?</h2>
 
-          <div className="">
-            <p><strong>Here's a step-by-step guide on how to use a Final Grade Calculator:</strong></p>
+          <div>
             <p>
-              Enter your current grade before the final exam in the "Current Grade (%)" field, the final grade you want to achieve in the "Desired Grade (%)" field, and how much the final exam is worth in the "Final Exam Weight (%)" field. Then click "Calculate Required Grade" to see the result.
+              A final grade calculator helps students figure out exactly what score they need on their final exam to reach a desired course grade. Whether you&apos;re trying to pass a class, maintain your GPA, or aim for an A, this tool removes all the guesswork.
             </p>
-            <p><strong>For Example:</strong> </p>
-            <p>Current grade is 70% (or C-).</p>
-            <p>Final exam weight is 50%.</p>
-            <p>Required grade is 80% (or B-).</p>
-            <p>The final exam grade is equal to the required grade, minus 100% minus the final exam weight (wfinal) times the current grade (g), divided by the final exam weight (w):</p>
-            <p>Final exam grade = (80% - (100% - 50%) * 70%) / 50% = 86%</p>
-            <p> <strong>So Final exam grade =</strong></p>
-            <p>=
-              required grade - (100% - wfinal)×current grade
-              wfinal
-              =
-              80% - (100% - 50%)×70%
-              50%
-              = 90%
+            <p>
+              Just enter three numbers: your current grade, your desired grade, and how much the final exam is worth and you&apos;ll instantly know the minimum score you need to hit your goal.
             </p>
-            <p>So the final exam grade should be 90% (or A-).</p>
+
+            <h2 className="h4 mt-4 fw-bold">How to Use This Final Exam Grade Calculator</h2>
+            <p>Using this calculator takes less than a minute. Here&apos;s how:</p>
+            <ol>
+              <li>
+                <strong>Enter your current grade</strong> This is your grade right now, before the final exam. Check your class portal, syllabus, or ask your teacher. Enter it as a percentage (e.g., 74%).
+              </li>
+              <li>
+                <strong>Enter your desired grade</strong> What final grade do you want in the course? Enter the percentage you&apos;re aiming for (e.g., 80% for a B).
+              </li>
+              <li>
+                <strong>Enter the final exam weight</strong> How much is your final exam worth in the overall course grade? This is usually listed in your syllabus (e.g., 40%).
+              </li>
+              <li>
+                <strong>Click &quot;Calculate Required Grade&quot;</strong> The calculator will instantly show you the exact score you need on your final exam.
+              </li>
+            </ol>
+
+            <h2 className="h4 mt-4 fw-bold">Final Exam Grade Formula</h2>
+            <p>If you want to understand the math behind the result, here&apos;s the formula:</p>
+            <p>
+              <strong>Final Exam Grade = (Desired Grade − (1 − Exam Weight) × Current Grade) / Exam Weight</strong>
+            </p>
+            <p><strong>Example:</strong></p>
+            <ul>
+              <li>Current grade: 70%</li>
+              <li>Desired grade: 80%</li>
+              <li>Final exam weight: 50%</li>
+            </ul>
+            <p>
+              Calculation: Final Exam Grade = (80% − (1 − 0.50) × 70%) / 0.50 = (80% − 35%) / 0.50 = 45% / 0.50 = 90%
+            </p>
+            <p>
+              So you&apos;d need a 90% on your final exam to finish the course with an 80%.
+            </p>
+
+            <h2 className="h4 mt-4 fw-bold">More Examples</h2>
+            <div className="table-responsive">
+              <table className="table table-bordered table-striped mt-3 mb-3">
+                <thead>
+                  <tr>
+                    <th>Current Grade</th>
+                    <th>Desired Grade</th>
+                    <th>Exam Weight</th>
+                    <th>Required Final Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>65%</td>
+                    <td>70%</td>
+                    <td>30%</td>
+                    <td>78%</td>
+                  </tr>
+                  <tr>
+                    <td>75%</td>
+                    <td>85%</td>
+                    <td>40%</td>
+                    <td>100%</td>
+                  </tr>
+                  <tr>
+                    <td>80%</td>
+                    <td>90%</td>
+                    <td>50%</td>
+                    <td>100%</td>
+                  </tr>
+                  <tr>
+                    <td>60%</td>
+                    <td>65%</td>
+                    <td>25%</td>
+                    <td>80%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              <strong>Note:</strong> If the required score comes out above 100%, you may need to reconsider your target grade or check if extra credit is available.
+            </p>
+
+            <h2 className="h4 mt-4 fw-bold">Frequently Asked Questions</h2>
+            <h3 className="h5 mt-3">1. What score do I need on my final to get an A?</h3>
+            <p>
+              It depends on your current grade and how much the final is worth. Enter your numbers into the calculator above to find out instantly.
+            </p>
+
+            <h3 className="h5 mt-3">2. What if my final exam is worth 30% instead of 50%?</h3>
+            <p>
+              No problem just enter 30 in the &quot;Final Exam Weight&quot; field. The calculator adjusts automatically based on whatever weight your exam carries.
+            </p>
+
+            <h3 className="h5 mt-3">3. Can I use this calculator for college and high school?</h3>
+            <p>
+              Yes. This final grade calculator works for any course i.e. high school, college, or university as long as you know your current grade and your final exam&apos;s weight.
+            </p>
+
+            <h3 className="h5 mt-3">4. What if my required score is over 100%?</h3>
+            <p>
+              That means your target grade may not be mathematically reachable with the final exam alone. You might want to lower your desired grade or explore extra credit options with your teacher.
+            </p>
+
+            <h3 className="h5 mt-3">5. How do I find my final exam weight?</h3>
+            <p>
+              Check your course syllabus. It&apos;s usually listed under &quot;Grading Policy&quot; or &quot;Assessment Breakdown.&quot; Common weights are 20%, 30%, 40%, or 50%.
+            </p>
+
+            <p className="mb-0">
+              Looking for more? Try our <a href="/grade-calculator/">Grade Calculator</a>, <a href="/gpa-calculator/">GPA Calculator</a>, or <a href="/percentage-calculator/">Percentage Calculator</a>.
+            </p>
           </div>
         </div>
       </div>
