@@ -1,6 +1,6 @@
 {
-  "/page": "app/page.js",
   "/about/page": "app/about/page.js",
+  "/page": "app/page.js",
   "/blog/page": "app/blog/page.js",
-  "/api/wp/[...path]/route": "app/api/wp/[...path]/route.js"
+  "/contact/page": "app/contact/page.js"
 }

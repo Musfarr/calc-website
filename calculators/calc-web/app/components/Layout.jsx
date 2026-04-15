@@ -71,6 +71,14 @@ export default function Layout({ children }) {
                         About Us
                       </Link>
                     </li>
+                    <li className="nav-item">
+                      <Link
+                        href="/contact/"
+                        className={`nav-link ${pathname === '/contact/' ? 'active fw-bold' : ''}`}
+                      >
+                        Contact
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </nav>
@@ -111,6 +119,7 @@ export default function Layout({ children }) {
               <Link href="/">Home</Link>
               <Link href="/blog/">Blog</Link>
               <Link href="/about/">About Us</Link>
+              <Link href="/contact/">Contact</Link>
               <Link href="/privacy/">Privacy Policy</Link>
               <Link href="/terms/">Terms & Conditions</Link>
             </div>
