@@ -25,7 +25,7 @@ export default function PrivacyPage() {
     <Layout>
       <h1 className="mb-4">Privacy Policy</h1>
       <div className="calculator-container">
-        <p><strong>Last Updated: April 9, 2026</strong></p>
+        <p><strong>Last Updated: April 15, 2026</strong></p>
         <p>
           Welcome to Final Grades Calculator (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). This Privacy Policy
           explains how we collect, use, and protect your information when you visit{' '}

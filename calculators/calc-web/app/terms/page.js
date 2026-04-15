@@ -25,7 +25,7 @@ export default function TermsPage() {
     <Layout>
       <h1 className="mb-4">Terms &amp; Conditions</h1>
       <div className="calculator-container">
-        <p><strong>Last Updated: April 9, 2026</strong></p>
+        <p><strong>Last Updated: April 15, 2026</strong></p>
         <p>
           Welcome to Final Grades Calculator. By accessing or using our website at{' '}
           <a href="https://www.finalgradescalculator.com">www.finalgradescalculator.com</a>, you agree to be bound by
