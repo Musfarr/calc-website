@@ -2,21 +2,21 @@ import { Metadata } from 'next';
 import GradeCalculator from '../calculators/GradeCalculator';
 
 export const metadata = {
-  title: 'Grade Calculator - Effortless Grade Calculation',
-  description: 'This grade calculator makes the calculation very easy. You can calculate the grade by entering the scores and weights.',
+  title: 'Grade Calculator – Calculate Weighted Grades Online',
+  description: 'Calculate your grade instantly. Enter assignment scores to get your weighted grade. Works as a test grade, quiz grade & high school grade calculator.',
   alternates: {
     canonical: 'https://www.finalgradescalculator.com/grade-calculator/',
   },
   openGraph: {
-    title: 'Grade Calculator - Effortless Grade Calculation',
-    description: 'This grade calculator makes the calculation very easy. You can calculate the grade by entering the scores and weights.',
+    title: 'Grade Calculator – Calculate Weighted Grades Online',
+    description: 'Calculate your grade instantly. Enter assignment scores to get your weighted grade. Works as a test grade, quiz grade & high school grade calculator.',
     url: 'https://www.finalgradescalculator.com/grade-calculator/',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Grade Calculator - Effortless Grade Calculation',
-    description: 'This grade calculator makes the calculation very easy. You can calculate the grade by entering the scores and weights.',
+    title: 'Grade Calculator – Calculate Weighted Grades Online',
+    description: 'Calculate your grade instantly. Enter assignment scores to get your weighted grade. Works as a test grade, quiz grade & high school grade calculator.',
   },
 };
 

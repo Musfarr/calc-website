@@ -188,57 +188,120 @@ export default function GradeCalculator() {
         )}
 
         <div className="mt-4 p-3 bg-light rounded">
-          <p className="mb-3">
-            This online grade calculator is built to quickly, accurately, and easily compute academic grades based on entered scores and weighted averages. 
-            It simplifies calculating current grades, enabling students and educators to manage their academic progress with ease and precision.
+          <h2 className="fw-bold">What Is a Grade Calculator?</h2>
+          <p>
+            A grade calculator is an online tool that helps students calculate their overall course grade based on
+            individual assignment scores and their weights. Whether you need a weighted grade calculator, a test grade
+            calculator, or a simple school grade calculator, this tool handles it all in seconds.
           </p>
-          
-          <h2 className='fw-bold'>How to Use a Grade Calculator?</h2>
-          <p> <strong>Here's a step-by-step guide on how to use a Grade Calculator:</strong></p>
-          
-          <h3 className="mt-3"><strong>Step 1: Input the Assignments</strong></h3>
-          <p>Users manually enter the name of each assignment, such as: Assignment 1, 2, 3, Homework, Final Exam, etc.</p>
-          
-          <h3><strong>Step 2: Input the Grade</strong></h3>
-          <p>Enter your scores for each assignment, test, project, or other exam throughout the course. Each entry generally includes the earned grade percentage (like 10%, 30%, 50%).</p>
-          
-          <h3 ><strong>Step 3: Input the Weight</strong></h3>
-          <p>Enter the assignment's weight into the course grade, indicating how different assignments impact the final grade, with a final exam potentially carrying more weight than small tasks.</p>
-          
-          <h3><strong>Step 4: Calculate the Grade Automatically</strong></h3>
-          <p>The tool automatically calculates the final grade based on entered grades and weights. Users can view their final score and see how each assignment impacts the overall mark.</p>
-          
-          <h3><strong>Step 5: Adjust as Needed</strong></h3>
-          <p>Users can add multiple grades and weights to view the cumulative final grade score for their course performance. This dynamic feature enables real-time exploration of various scenarios, helping users make informed decisions about their academic strategy and goal achievement.</p>
-          
-          <h2 className="mt-4">Weighted Grade Calculation</h2>
-          <p>The weighted grade is equal to <strong>(Sum of (Grade × Weight)) / (Sum of Weights)</strong>.</p>
-          <p>To use it: multiply each assignment's grade by its weight (as a decimal), sum these values, and then divide by the total of all the weights.</p>
-          
-          <h6 className="mt-3"><strong>For Example:</strong></h6>
+          <p>
+            Students use it to track academic progress, plan for upcoming exams, and understand exactly how each
+            assignment impacts their final grade.
+          </p>
+
+          <h2 className="h4 mt-4 fw-bold">How to Use This Grade Calculator</h2>
+          <ol>
+            <li>
+              <strong>Add your assignments</strong> Click &quot;Add Assignment&quot; for each item you want to include
+              i.e. homework, quiz, test, midterm, or final exam. The assignment name is optional, so you can skip it
+              and just enter the numbers if you prefer.
+            </li>
+            <li>
+              <strong>Enter the grade</strong> Enter the score you received for each assignment as a percentage
+              (e.g., 85%).
+            </li>
+            <li>
+              <strong>Enter the weight</strong> Enter how much each assignment counts toward your overall grade. Your
+              syllabus will have this information. For example, if your final exam is worth 40% of your course grade,
+              enter 40.
+            </li>
+            <li>
+              <strong>Click &quot;Calculate Grade&quot;</strong> The calculator will instantly display your overall
+              weighted grade along with the corresponding grade letter (A, B, C, D, or F).
+            </li>
+          </ol>
+
+          <h2 className="h4 mt-4 fw-bold">Weighted Grade Calculator – How It Works</h2>
+          <p>
+            This calculator uses a weighted average formula, which means not all assignments count equally. A final
+            exam worth 40% impacts your grade far more than a quiz worth 5%.
+          </p>
+          <p><strong>Formula:</strong></p>
+          <p><strong>Weighted Grade = (Sum of Grade × Weight) ÷ Sum of Weights</strong></p>
+          <p><strong>Example:</strong></p>
+          <div className="table-responsive">
+            <table className="table table-bordered table-striped mt-2 mb-3">
+              <thead>
+                <tr>
+                  <th>Assignment</th>
+                  <th>Grade</th>
+                  <th>Weight</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Homework</td><td>90%</td><td>20%</td></tr>
+                <tr><td>Midterm</td><td>78%</td><td>30%</td></tr>
+                <tr><td>Final Exam</td><td>85%</td><td>50%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            Weighted Grade = (90×20 + 78×30 + 85×50) / (20+30+50) = (1800 + 2340 + 4250) / 100 = <strong>83.9% – B</strong>
+          </p>
+
+          <h2 className="h4 mt-4 fw-bold">Grade Calculator for Different Use Cases</h2>
+          <p>This online grader works for every type of student and course:</p>
           <ul>
-            <li>Math course with a grade of 80 and a weight of 30%.</li>
-            <li>Biology course with a grade of 90 and a weight of 50%.</li>
-            <li>History course with a grade of 72 and a weight of 20%.</li>
+            <li>
+              <strong>High School Students:</strong> Use this grade calculator for high school to track grades across
+              multiple subjects i.e. English, Math, Science, History, all in one place.
+            </li>
+            <li>
+              <strong>Quarter &amp; Semester Grades:</strong> Need a quarter grade calculator? Simply enter your
+              assignments from that quarter and calculate your standing before the term ends.
+            </li>
+            <li>
+              <strong>Test &amp; Quiz Grades:</strong> Use it as a test grade calculator or quiz grader to see how a
+              single test score affects your overall average.
+            </li>
+            <li>
+              <strong>Grade Percentage Calculator:</strong> Not sure what percentage you&apos;re at? Enter your scores
+              and weights to get an exact grade percentage instantly.
+            </li>
           </ul>
-          
-          <p>The weighted average grade is calculated by:</p>
-          <p><strong>Weighted grade = w₁×g₁ + w₂×g₂ + w₃×g₃</strong></p>
-          <p>= 30%×80 + 50%×90 + 20%×72 = <strong>83.4</strong></p>
-          
-          <p className="mt-3">When the weights are not in percent (hours or points...), you should also divide by the sum of the weights:</p>
-          <p><strong>Weighted grade = (w₁×g₁ + w₂×g₂ + w₃×g₃ + ...) / (w₁ + w₂ + w₃ + ...)</strong></p>
-          
-          <h6 className="mt-3"><strong>Example:</strong></h6>
-          <ul>
-            <li>Completed a 3-point Math course with a grade of 80.</li>
-            <li>Completed a 5-point Biology course with a grade of 90.</li>
-            <li>Completed a 2-point History course with a grade of 72.</li>
-          </ul>
-          
-          <p>The weighted average grade is calculated by:</p>
-          <p><strong>Weighted grade = (w₁×g₁ + w₂×g₂ + w₃×g₃) / (w₁ + w₂ + w₃)</strong></p>
-          <p>= (3×80 + 5×90 + 2×72) / (3 + 5 + 2) = <strong>83.4</strong></p>
+
+          <h2 className="h4 mt-4 fw-bold">Frequently Asked Questions</h2>
+
+          <h3 className="h5 mt-3">1. What is a weighted grade calculator?</h3>
+          <p>
+            A weighted grade calculator accounts for the fact that different assignments carry different importance. A
+            final exam worth 50% of your grade impacts your overall score much more than a homework assignment worth 5%.
+          </p>
+
+          <h3 className="h5 mt-3">2. How do I calculate my overall grade?</h3>
+          <p>
+            Enter each assignment&apos;s score and its weight into the calculator. It will automatically compute your
+            overall grade using the weighted average formula.
+          </p>
+
+          <h3 className="h5 mt-3">3. Can I use this as a high school grade calculator?</h3>
+          <p>
+            Yes. This calculator works for high school, college, and university courses. As long as you know your
+            scores and weights, it works for any level.
+          </p>
+
+          <h3 className="h5 mt-3">4. What if all my assignments have equal weight?</h3>
+          <p>
+            Just enter the same weight for each assignment (e.g., all at 10%), and the calculator will treat them
+            equally when computing your grade.
+          </p>
+
+          <h3 className="h5 mt-3">5. What&apos;s the difference between a grade calculator and a final grade calculator?</h3>
+          <p>
+            A grade calculator shows your current overall grade based on completed work. A{' '}
+            <a href="/">final grade calculator</a> tells you what score you need on your final exam to reach a desired
+            grade.
+          </p>
         </div>
       </div>
 

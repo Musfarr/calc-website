@@ -63,6 +63,14 @@ export default function Layout({ children }) {
                         Blog
                       </Link>
                     </li>
+                    <li className="nav-item">
+                      <Link
+                        href="/about/"
+                        className={`nav-link ${pathname === '/about/' ? 'active fw-bold' : ''}`}
+                      >
+                        About Us
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </nav>
@@ -102,6 +110,7 @@ export default function Layout({ children }) {
             <div className="col-md-6 text-center text-md-end">
               <Link href="/">Home</Link>
               <Link href="/blog/">Blog</Link>
+              <Link href="/about/">About Us</Link>
               <Link href="/privacy/">Privacy Policy</Link>
               <Link href="/terms/">Terms & Conditions</Link>
             </div>
