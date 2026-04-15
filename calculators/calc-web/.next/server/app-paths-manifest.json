@@ -1,4 +1,6 @@
 {
+  "/page": "app/page.js",
   "/about/page": "app/about/page.js",
-  "/_not-found/page": "app/_not-found/page.js"
+  "/blog/page": "app/blog/page.js",
+  "/api/wp/[...path]/route": "app/api/wp/[...path]/route.js"
 }

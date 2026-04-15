@@ -70,7 +70,7 @@ export default function Blog() {
           {isLoading && (
             <div className="col-12 d-flex justify-content-center my-4">
               <div className="spinner-border text-primary" role="status">
-                <span className="visually-hidden">Loading...</span>
+                <span className="visually-hidden"></span>
               </div>
             </div>
           )}

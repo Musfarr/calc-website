@@ -26,7 +26,7 @@ export default function BlogList() {
     fetchPosts();
   }, []);
 
-  if (loading) return <div className="calculator-container">Loading posts...</div>;
+  if (loading) return <div className="calculator-container"></div>;
   if (error) return <div className="calculator-container text-danger">Error: {error}</div>;
   if (posts.length === 0) return <div className="calculator-container">No posts found.</div>;
 
