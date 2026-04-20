@@ -28,12 +28,11 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        <Script
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9269385747801854"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
+        ></script>
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-98RFDVM6LP" strategy="afterInteractive" />
         <Script id="gtag-init" strategy="afterInteractive">
           {`
