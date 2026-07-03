@@ -79,16 +79,6 @@ export default function GPACalculator() {
     applicationCategory: "CalculatorApplication",
     description: "Easily calculate your GPA with our free online GPA Calculator. Input your courses, credits, and grades to get your GPA instantly.",
     url: "https://www.finalgradescalculator.com/gpa-calculator/",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD"
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      ratingCount: "240"
-    },
     publisher: {
       "@type": "Organization",
       name: "Final Grades Calculator",

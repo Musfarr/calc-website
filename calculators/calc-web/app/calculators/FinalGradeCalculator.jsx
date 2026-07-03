@@ -64,16 +64,6 @@ export default function FinalGradeCalculator() {
     applicationCategory: "CalculatorApplication",
     description: "Easily calculate your final grade percentage and plan your academic success with our free Final Grade Calculator tool.",
     url: "https://www.finalgradescalculator.com/",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD"
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      ratingCount: "275"
-    },
     publisher: {
       "@type": "Organization",
       name: "Final Grades Calculator",

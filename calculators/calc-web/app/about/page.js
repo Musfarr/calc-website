@@ -6,6 +6,10 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.finalgradescalculator.com/about/',
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
   openGraph: {
     title: 'About Us – Final Grades Calculator',
     description: 'Learn about Final Grades Calculator — a free online tool built to help students calculate their final exam grades, weighted grades, and GPA with ease.',

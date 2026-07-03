@@ -9,8 +9,6 @@ const staticRoutes = [
   { url: '/percentage-calculator/', priority: 0.8, changeFrequency: 'monthly' },
   { url: '/gpa-calculator/', priority: 0.8, changeFrequency: 'monthly' },
   { url: '/blog/', priority: 0.9, changeFrequency: 'daily' },
-  { url: '/about/', priority: 0.6, changeFrequency: 'monthly' },
-  { url: '/contact/', priority: 0.6, changeFrequency: 'monthly' },
   { url: '/privacy/', priority: 0.5, changeFrequency: 'yearly' },
   { url: '/terms/', priority: 0.5, changeFrequency: 'yearly' },
 ];

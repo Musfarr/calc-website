@@ -77,16 +77,6 @@ export default function GradeCalculator() {
     applicationCategory: "CalculatorApplication",
     description: "Easily calculate your overall grade using our free online Grade Calculator. Input your assignment scores and weights to find your current or final grade instantly.",
     url: "https://www.finalgradescalculator.com/grade-calculator/",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD"
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      ratingCount: "220"
-    },
     publisher: {
       "@type": "Organization",
       name: "Final Grades Calculator",
