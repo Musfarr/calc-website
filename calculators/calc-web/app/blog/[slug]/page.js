@@ -6,9 +6,10 @@ import { fetchPostBySlug, getPostMeta } from '../../lib/wp';
 // Allow dynamic rendering for new posts not in generateStaticParams
 export const dynamicParams = true;
 
-// Force dynamic rendering to always fetch fresh data
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
+// Use ISR: serve cached page instantly, revalidate in the background every 5 min.
+// This avoids a live external API call on every single request/crawl, which was
+// causing intermittent "Post Not Found" metadata when the WordPress API was slow.
+export const revalidate = 300;
 
 export async function generateMetadata({ params }) {
   try {
@@ -16,8 +17,15 @@ export async function generateMetadata({ params }) {
 
     if (!post) {
       return {
-        title: 'Post Not Found',
-        description: 'The blog post you are looking for does not exist.',
+        title: 'Post Not Found – Final Grades Calculator',
+        description: 'The blog post you are looking for does not exist or may have been moved. Browse our other articles on the Final Grades Calculator blog.',
+        alternates: {
+          canonical: `https://www.finalgradescalculator.com/blog/${params.slug}/`,
+        },
+        robots: {
+          index: false,
+          follow: true,
+        },
       };
     }
 
@@ -47,8 +55,12 @@ export async function generateMetadata({ params }) {
   } catch (err) {
     console.error('Error generating metadata for blog post:', err);
     return {
-      title: 'Blog Post',
-      description: 'Read our blog post',
+      title: 'Blog – Final Grades Calculator',
+      description: 'Read our latest articles about grades, calculators, GPA, and educational tips on the Final Grades Calculator blog.',
+      robots: {
+        index: false,
+        follow: true,
+      },
     };
   }
 }
