@@ -178,59 +178,172 @@ export default function GPACalculator() {
         )}
 
         <div className="mt-4 p-3 bg-light rounded">
-          <p className="mb-3">
-            This online GPA calculator is designed to quickly and accurately calculate your Grade Point Average based on your courses, credits, and grades. 
-            It simplifies GPA calculation, enabling students to track their academic progress with ease and precision.
+          <h2 className="fw-bold">What Is a GPA Calculator?</h2>
+          <p>
+            Your GPA is one of the most consequential numbers in your academic record. It affects scholarship eligibility, academic standing, graduate school applications, honors designations, and in some fields, early career opportunities. Understanding exactly where yours stands and what is driving it gives you something to act on rather than just worry about.
+          </p>
+          <p>
+            A GPA calculator works out your Grade Point Average by combining the grades you received with the credit weight of each course. It does not treat every class equally. A four-credit course contributes more to your GPA than a two-credit one, even if you earned the same letter grade in both.
+          </p>
+          <p>
+            This calculator is useful at any point in the semester or academic year. Use it after grades are posted to see where you landed, mid-semester to model different outcomes, or before course registration to plan which classes fit your GPA goals.
+          </p>
+
+          <h2 className="h4 mt-4 fw-bold">How to Use the GPA Calculator</h2>
+          <p>
+            Add one row for each course. Enter the number of credit hours, typically 3 or 4 per course though this varies by institution and course type, and select the letter grade you received from the dropdown.
+          </p>
+          <p>
+            The course name is optional. If you are tracking a full semester or comparing multiple terms, naming your courses makes it easier to read the results and catch any entry errors. If you just want a quick calculation, skip the names.
+          </p>
+          <p>
+            Once all your courses are entered, click Calculate GPA. Your Grade Point Average will appear alongside the total credits entered.
+          </p>
+          <p>
+            To see how a grade change would affect your GPA, adjust any grade in the dropdown and recalculate. This is useful for understanding which courses had the biggest impact on your average and which ones, if retaken or replaced, would move the needle most.
           </p>
           
-          <h2 className='fw-bold'>How to Use a GPA Calculator?</h2>
-          <p><strong>Here's a step-by-step guide on how to use a GPA Calculator:</strong></p>
-          
-          <h3 className="mt-3"><strong>Step 1: Enter Course Name</strong></h3>
-          <p>Enter the name of each course you've taken (e.g., Math 101, Biology 201, etc.). This is optional but helps you keep track.</p>
-          
-          <h3><strong>Step 2: Enter Credits</strong></h3>
-          <p>Enter the number of credit hours for each course. This is typically 3 or 4 credits per course, but can vary.</p>
-          
-          <h3><strong>Step 3: Select Grade</strong></h3>
-          <p>Select the letter grade you received for each course from the dropdown menu (A+, A, A-, B+, B, B-, C+, C, C-, D+, D, F).</p>
-          
-          <h3><strong>Step 4: Calculate GPA</strong></h3>
-          <p>Click the "Calculate GPA" button to compute your GPA based on the courses, credits, and grades you've entered.</p>
-          
-          <h3><strong>Step 5: View Results</strong></h3>
-          <p>Your calculated GPA will be displayed. You can add more courses or adjust grades to see how they affect your GPA.</p>
-          
-          <h2 className="mt-4">GPA Calculation Formula</h2>
-          <p>GPA is calculated using the following formula:</p>
-          <p><strong>GPA = (Sum of (Grade Points × Credits)) / (Sum of Credits)</strong></p>
-          
-          <h6 className="mt-3"><strong>Grade Point Scale:</strong></h6>
-          <ul>
-            <li>A+ = 4.0</li>
-            <li>A = 4.0</li>
-            <li>A- = 3.7</li>
-            <li>B+ = 3.3</li>
-            <li>B = 3.0</li>
-            <li>B- = 2.7</li>
-            <li>C+ = 2.3</li>
-            <li>C = 2.0</li>
-            <li>C- = 1.7</li>
-            <li>D+ = 1.3</li>
-            <li>D = 1.0</li>
-            <li>F = 0.0</li>
-          </ul>
-          
-          <h6 className="mt-3"><strong>Example:</strong></h6>
-          <ul>
-            <li>Math 101: 4 credits, Grade A (4.0 points) = 16 points</li>
-            <li>English 101: 3 credits, Grade B (3.0 points) = 9 points</li>
-            <li>History 101: 3 credits, Grade A- (3.7 points) = 11.1 points</li>
-          </ul>
-          
-          <p>Total points: 16 + 9 + 11.1 = 36.1</p>
+          <h2 className="h4 mt-4 fw-bold">How GPA Is Calculated</h2>
+          <p>
+            GPA uses a weighted average formula. Each grade is first converted to a grade point value on a 4.0 scale. That value is then multiplied by the number of credit hours the course carries. All of those products are added together and divided by the total number of credits entered.
+          </p>
+          <p><strong>GPA = Sum of (Grade Points × Credits) ÷ Sum of All Credits</strong></p>
+
+          <h3 className="h5 mt-3 fw-bold">Grade point scale:</h3>
+          <div className="table-responsive">
+            <table className="table table-bordered table-striped mt-2 mb-3">
+              <thead>
+                <tr>
+                  <th>Letter Grade</th>
+                  <th>Grade Points</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>A+</td><td>4.0</td></tr>
+                <tr><td>A</td><td>4.0</td></tr>
+                <tr><td>A-</td><td>3.7</td></tr>
+                <tr><td>B+</td><td>3.3</td></tr>
+                <tr><td>B</td><td>3.0</td></tr>
+                <tr><td>B-</td><td>2.7</td></tr>
+                <tr><td>C+</td><td>2.3</td></tr>
+                <tr><td>C</td><td>2.0</td></tr>
+                <tr><td>C-</td><td>1.7</td></tr>
+                <tr><td>D+</td><td>1.3</td></tr>
+                <tr><td>D</td><td>1.0</td></tr>
+                <tr><td>F</td><td>0.0</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 className="h5 mt-3 fw-bold">Worked example:</h3>
+          <div className="table-responsive">
+            <table className="table table-bordered table-striped mt-2 mb-3">
+              <thead>
+                <tr>
+                  <th>Course</th>
+                  <th>Credits</th>
+                  <th>Grade</th>
+                  <th>Grade Points</th>
+                  <th>Weighted Points</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Math 101</td><td>4</td><td>A</td><td>4.0</td><td>16.0</td></tr>
+                <tr><td>English 101</td><td>3</td><td>B</td><td>3.0</td><td>9.0</td></tr>
+                <tr><td>History 101</td><td>3</td><td>A-</td><td>3.7</td><td>11.1</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Total weighted points: 16.0 + 9.0 + 11.1 = 36.1</p>
           <p>Total credits: 4 + 3 + 3 = 10</p>
-          <p><strong>GPA = 36.1 / 10 = 3.61</strong></p>
+          <p><strong>GPA = 36.1 ÷ 10 = 3.61</strong></p>
+          <p>
+            Notice that the Math course carries the most influence here. Four credits at an A contributes 16 points, compared to the three-credit courses at 9 and 11.1. This is exactly why credit hours matter in the calculation and why a high grade in a high-credit course can meaningfully lift your GPA, while a poor grade in the same situation can significantly drag it down.
+          </p>
+
+          <h2 className="h4 mt-4 fw-bold">What Your GPA Means</h2>
+          <p>
+            GPA thresholds vary by institution and context, but these ranges reflect how GPAs are generally interpreted across most universities and colleges:
+          </p>
+          <div className="table-responsive">
+            <table className="table table-bordered table-striped mt-2 mb-3">
+              <thead>
+                <tr>
+                  <th>GPA Range</th>
+                  <th>Standing</th>
+                  <th>What It Often Means</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>3.7 to 4.0</td><td>Excellent</td><td>Dean&apos;s List eligibility at most institutions</td></tr>
+                <tr><td>3.3 to 3.69</td><td>Very Good</td><td>Competitive for graduate school and scholarships</td></tr>
+                <tr><td>3.0 to 3.29</td><td>Good</td><td>Meets most academic requirements comfortably</td></tr>
+                <tr><td>2.7 to 2.99</td><td>Satisfactory</td><td>Above minimum standing, may limit some opportunities</td></tr>
+                <tr><td>2.0 to 2.69</td><td>Passing</td><td>Meets minimum requirements at most institutions</td></tr>
+                <tr><td>Below 2.0</td><td>At Risk</td><td>May trigger academic probation at many schools</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            These are general benchmarks. Always check your specific institution&apos;s policies and any program-specific GPA requirements. Graduate programs, scholarships, and professional schools often set their own thresholds.
+          </p>
+
+          <h2 className="h4 mt-4 fw-bold">How Individual Grades Affect Your GPA</h2>
+          <p>
+            One of the most useful things a GPA calculator can show you is how sensitive your average is to a single grade change. The impact depends entirely on the credit weight of the course.
+          </p>
+          <p>
+            A grade change in a four-credit course moves your GPA more than the same change in a two-credit course. A student with 60 accumulated credits will see less movement from one new course than a first-semester student with only 15 credits, because the new grade is being averaged against a much larger base.
+          </p>
+          <p>
+            This has practical implications. Early in your academic career, each course has an outsized effect on your GPA. One strong semester can establish a solid foundation. One difficult semester is also harder to recover from later, once you have more credits diluting any single term&apos;s impact. Later in your degree, maintaining your GPA is generally more manageable, but significantly raising it requires consistent performance over multiple terms. A single good semester will not move a cumulative GPA by much when it is competing against three years of prior results.
+          </p>
+
+          <h2 className="h4 mt-4 fw-bold">Cumulative GPA vs. Semester GPA</h2>
+          <p>
+            Your semester GPA reflects only the courses from one term. Your cumulative GPA covers your entire academic record.
+          </p>
+          <p>
+            To calculate your cumulative GPA using this tool, enter all courses across all semesters. Each course is weighted by its credits, so the total reflects the same formula your institution uses. If you want to see just one semester, enter only those courses.
+          </p>
+          <p>
+            Some students track both. Semester GPA tells you how a particular term went and whether your performance is trending up or down. Cumulative GPA is what appears on your transcript and what external parties such as employers, graduate schools, and scholarship committees typically evaluate.
+          </p>
+          <p>
+            If your cumulative GPA is lower than you would like, look at your semester GPA trend. Consistent improvement over several terms is visible to admissions committees and demonstrates trajectory, even if the cumulative number has not caught up yet.
+          </p>
+
+          <h2 className="h4 mt-4 fw-bold">Frequently Asked Questions</h2>
+
+          <h3 className="h5 mt-3">1. Does an A+ count differently from an A?</h3>
+          <p>
+            At most institutions in the US, both A+ and A convert to 4.0 grade points, so they contribute identically to your GPA. Some schools do award 4.3 for an A+, which can push a GPA above 4.0. This calculator uses the standard 4.0 scale. Check your institution&apos;s policy if precision matters.
+          </p>
+
+          <h3 className="h5 mt-3">2. Do all courses count toward my GPA?</h3>
+          <p>
+            Not always. Pass or fail courses, transfer credits, audit enrolments, and remedial courses are often excluded from GPA calculations depending on your institution&apos;s policy. Check with your registrar to confirm which courses appear in your GPA and which do not before entering them here.
+          </p>
+
+          <h3 className="h5 mt-3">3. How many credits does it take to raise my GPA significantly?</h3>
+          <p>
+            It depends on how many credits you have already completed. The more accumulated credits you carry, the harder it is to move your GPA in either direction. A student with 120 completed credits would need an extraordinary run of grades to shift their cumulative GPA by even a few tenths of a point. Use this calculator to model different scenarios and see the real impact.
+          </p>
+
+          <h3 className="h5 mt-3">4. What if my school uses a different grading scale?</h3>
+          <p>
+            Some institutions use a 4.3 scale awarding 4.3 for A+, a 5.0 scale, or percentage-based grading with custom conversion tables. This calculator uses the standard 4.0 scale common across US colleges and universities. If your institution uses a different scale, consult your registrar or student handbook for the correct conversion.
+          </p>
+
+          <h3 className="h5 mt-3">5. Can I use this to calculate my GPA for graduate school applications?</h3>
+          <p>
+            Yes, with one caveat. Some graduate programs calculate GPA differently, for example using only the last 60 credits, or only upper-division coursework, or only courses within a specific major. Before relying on your result for an application, confirm which courses the program wants included and enter accordingly.
+          </p>
+
+          <h3 className="h5 mt-3">6. What is the fastest way to raise a low GPA?</h3>
+          <p>
+            The most direct path is earning strong grades in high-credit courses over consecutive terms, combined with any grade replacement or academic renewal policies your institution offers. Some schools allow students to retake a course and have the new grade replace or average with the original in the GPA calculation. Check with your registrar as those policies vary widely and can make a meaningful difference.
+          </p>
         </div>
       </div>
 
