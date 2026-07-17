@@ -299,9 +299,9 @@ export default function FinalGradeCalculator() {
               Divide your earned points by the total possible points and multiply by 100. If you have 340 out of 400 points, that is 340 divided by 400 multiplied by 100, which gives you 85%. Use that as your current grade.
             </p>
 
-            <p className="mb-0">
+            {/* <p className="mb-0">
               Looking for more? Try our <a href="/grade-calculator/">Grade Calculator</a>, <a href="/gpa-calculator/">GPA Calculator</a>, or <a href="/percentage-calculator/">Percentage Calculator</a>.
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
